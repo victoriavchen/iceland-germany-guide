@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>冰島 × 南德 × 奧地利：文化故事與隨身語音指南</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', '"Noto Sans TC"', 'system-ui', 'sans-serif'],
+            serif: ['"Noto Serif TC"', 'Georgia', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --navy-950: #040916;
+      --navy-900: #09152b;
+      --navy-850: #0b1d3a;
+      --glass-card-bg: rgba(13, 24, 46, 0.85);
+      --glass-card-hover: rgba(17, 32, 60, 0.94);
+      --glass-border: rgba(148, 197, 255, 0.24);
+      --glass-border-hover: rgba(125, 211, 252, 0.52);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #040916 !important;
+      background: linear-gradient(135deg, #040916 0%, #09152b 50%, #0b1d3a 100%) !important;
+      background-attachment: fixed !important;
+      color: #f8fafc !important;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      color-scheme: dark;
+    }
+
+    /* Deep Sapphire, Aurora Teal & Royal Indigo Ambient Glow Orbs */
+    .ambient-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .glow-orb {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(115px);
+      opacity: 0.26;
+      animation: floatSlow 24s ease-in-out infinite alternate;
+    }
+
+    .orb-sapphire {
+      width: 48vw;
+      height: 48vw;
+      max-width: 640px;
+      max-height: 640px;
+      top: -12%;
+      left: -8%;
+      background: radial-gradient(circle, #1d4ed8 0%, rgba(29, 78, 216, 0) 72%);
+    }
+
+    .orb-teal {
+      width: 45vw;
+      height: 45vw;
+      max-width: 600px;
+      max-height: 600px;
+      top: 32%;
+      right: -10%;
+      background: radial-gradient(circle, #0d9488 0%, rgba(13, 148, 136, 0) 72%);
+      animation-delay: -8s;
+    }
+
+    .orb-indigo {
+      width: 44vw;
+      height: 44vw;
+      max-width: 580px;
+      max-height: 580px;
+      bottom: -10%;
+      left: 20%;
+      background: radial-gradient(circle, #4338ca 0%, rgba(67, 56, 202, 0) 72%);
+      animation-delay: -15s;
+    }
+
+    @keyframes floatSlow {
+      0% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(2.5%, 3%, 0) scale(1.05); }
+      100% { transform: translate3d(-2.5%, -2%, 0) scale(0.97); }
+    }
+
+    /* High-Contrast Midnight Navy Liquid Glass Surface */
+    .liquid-glass {
+      background: var(--glass-card-bg);
+      backdrop-filter: blur(22px) saturate(165%);
+      -webkit-backdrop-filter: blur(22px) saturate(165%);
+      border: 1px solid var(--glass-border);
+      box-shadow:
+        0 14px 40px rgba(0, 0, 0, 0.48),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                  background 0.25s ease,
+                  border-color 0.25s ease,
+                  box-shadow 0.25s ease;
+    }
+
+    .liquid-glass-hover:hover {
+      transform: translateY(-3px);
+      background: var(--glass-card-hover);
+      border-color: var(--glass-border-hover);
+      box-shadow:
+        0 18px 48px rgba(0, 0, 0, 0.58),
+        0 0 26px rgba(56, 189, 248, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    }
+
+    /* Sticky Top Navigation Bar */
+    .liquid-nav {
+      background: rgba(5, 11, 24, 0.9);
+      backdrop-filter: blur(26px) saturate(170%);
+      -webkit-backdrop-filter: blur(26px) saturate(170%);
+      border-bottom: 1px solid rgba(148, 197, 255, 0.22);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Navigation & Category Filter Pills */
+    .nav-pill {
+      background: rgba(15, 29, 56, 0.88);
+      border: 1px solid rgba(148, 197, 255, 0.24);
+      color: #cbd5e1;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover {
+      background: rgba(30, 58, 108, 0.95);
+      border-color: rgba(147, 197, 253, 0.55);
+      color: #ffffff;
+    }
+
+    .nav-pill.active {
+      background: linear-gradient(135deg, #2563eb, #0284c7);
+      border-color: rgba(186, 230, 253, 0.8);
+      color: #ffffff;
+      font-weight: 600;
+      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    /* Active Speaking Card State */
+    .card-speaking {
+      border-color: #38bdf8 !important;
+      background: rgba(16, 33, 66, 0.95) !important;
+      box-shadow:
+        0 0 34px rgba(56, 189, 248, 0.38),
+        inset 0 1px 0 rgba(186, 230, 253, 0.45) !important;
+    }
+
+    /* Audio Equalizer Animation */
+    .eq-bar {
+      display: inline-block;
+      width: 3px;
+      height: 12px;
+      background: #38bdf8;
+      border-radius: 99px;
+      animation: eqDance 0.7s ease-in-out infinite alternate;
+    }
+    .eq-bar:nth-child(2) { animation-delay: 0.2s; height: 16px; }
+    .eq-bar:nth-child(3) { animation-delay: 0.4s; height: 9px; }
+
+    @keyframes eqDance {
+      0% { transform: scaleY(0.35); }
+      100% { transform: scaleY(1.15); }
+    }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-sky-500/40 selection:text-white">
+
+  <!-- Deep Midnight Navy Ambient Glow Background -->
+  <div class="ambient-canvas" aria-hidden="true">
+    <div class="glow-orb orb-sapphire"></div>
+    <div class="glow-orb orb-teal"></div>
+    <div class="glow-orb orb-indigo"></div>
+  </div>
+
+  <!-- Sticky Top Navigation Bar -->
+  <header class="liquid-nav sticky top-0 z-40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <!-- Row 1: Title + Jump Tool CTAs + Search -->
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-600/85 to-sky-500/85 border border-sky-300/40 flex items-center justify-center text-lg shadow-lg">
+            🧭
+          </div>
+          <div>
+            <h1 class="font-serif text-base sm:text-lg font-bold tracking-wide text-white leading-tight">
+              冰島 × 南德 × 奧地利：文化故事與隨身語音指南
+            </h1>
+            <p class="text-xs text-sky-200 hidden sm:block">
+              深度人文說書 ・ 中文語音朗讀 ・ 32 張三語發音字卡 ・ 餐廳小費計算機
+            </p>
+          </div>
+        </div>
+
+        <!-- Jump-to-Tool Buttons & Unified Search -->
+        <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto justify-end">
+          <button
+            type="button"
+            onclick="jumpToSection('tip-calculator-section', true)"
+            class="px-3.5 py-2 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-500 hover:to-sky-500 border border-sky-300/50 shadow-md transition-all flex items-center gap-1.5 cursor-pointer"
+          >
+            <span>💶</span>
+            <span>互動小費計算機</span>
+          </button>
+
+          <button
+            type="button"
+            onclick="jumpToSection('flashcards-section', false)"
+            class="px-3.5 py-2 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 border border-teal-300/50 shadow-md transition-all flex items-center gap-1.5 cursor-pointer"
+          >
+            <span>🔊</span>
+            <span>三語發音字卡庫 (32)</span>
+          </button>
+
+          <div class="relative flex-1 sm:flex-initial sm:w-56">
+            <input
+              id="globalSearchInput"
+              type="text"
+              placeholder="搜尋故事或單字：極光、白香腸..."
+              oninput="handleGlobalSearch(this.value)"
+              class="w-full pl-8 pr-7 py-1.5 rounded-full text-xs sm:text-sm bg-[#0b1830] border border-sky-300/35 text-white placeholder-slate-400 focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/30 transition"
+            />
+            <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-sky-300 text-xs">🔍</span>
+            <button
+              id="clearSearchBtn"
+              type="button"
+              onclick="clearGlobalSearch()"
+              class="hidden absolute right-2 top-1/2 -translate-y-1/2 text-slate-300 hover:text-white text-xs px-1 cursor-pointer"
+              title="清除搜尋"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Story Destination Filter Pills -->
+      <nav aria-label="故事地點與篇章篩選" class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-2.5 mt-2.5 border-t border-sky-300/15">
+        <button type="button" data-story-cat="all" onclick="setStoryCategory('all', this)" class="nav-pill active whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
+          ✨ 全部故事
+        </button>
+        <button type="button" data-story-cat="iceland" onclick="setStoryCategory('iceland', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
+          🇮🇸 冰島故事
+        </button>
+        <button type="button" data-story-cat="germany" onclick="setStoryCategory('germany', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
+          🇩🇪 德國總論
+        </button>
+        <button type="button" data-story-cat="munich" onclick="setStoryCategory('munich', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
+          🍺 慕尼黑
+        </button>
+        <button type="button" data-story-cat="konigssee" onclick="setStoryCategory('konigssee', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
+          ⛰️ 國王湖
+        </button>
+        <button type="button" data-story-cat="salzburg" onclick="setStoryCategory('salzburg', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
+          🎻 薩爾斯堡
+        </button>
+        <button type="button" data-story-cat="hallstatt" onclick="setStoryCategory('hallstatt', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
+          🏔️ 哈斯塔特
+        </button>
+        <button type="button" data-story-cat="royals" onclick="setStoryCategory('royals', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
+          👑 皇室傳奇
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-7 pb-32 space-y-12">
+
+    <!-- Hero Intro Card -->
+    <section class="liquid-glass rounded-3xl p-6 sm:p-8 lg:p-9">
+      <div class="max-w-4xl space-y-3">
+        <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 border border-sky-300/35 text-sky-200 text-xs font-semibold">
+          <span>🎙️ 全站 18 則故事支援繁體中文語音說書</span>
+          <span>•</span>
+          <span>🗣️ 32 張德語 / 奧地利語 / 冰島語真人發音字卡</span>
+        </div>
+        <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug">
+          從北大西洋的極光與維京議會，走進阿爾卑斯山的童話城堡與千年鹽都
+        </h2>
+        <p class="text-base sm:text-[17px] text-[#e2e8f0] leading-[1.78]">
+          全站採用一致的深午夜藍高對比液態玻璃設計，文字清晰不刺眼。每張故事卡片右上角皆配有 <strong class="text-sky-300">「🎙️ 中文說書朗讀」</strong> 按鈕，點一下就像隨身導遊為你講故事；下方還有專屬的<strong>德國／奧地利湊整數小費計算機</strong>與<strong>32 張三語旅行發音字卡庫</strong>。
+        </p>
+      </div>
+    </section>
+
+    <!-- Search Empty State (Stories) -->
+    <div id="emptyStoryState" class="hidden liquid-glass rounded-3xl p-10 text-center space-y-3">
+      <div class="text-4xl">🧭</div>
+      <h3 class="font-serif text-xl font-bold text-white">找不到符合關鍵字的故事卡片</h3>
+      <p class="text-sm text-slate-300">請嘗試其他關鍵字（例如：冰島、精靈、白香腸、人骨教堂、新天鵝堡），或點擊下方按鈕恢復全部顯示。</p>
+      <button type="button" onclick="clearGlobalSearch(); setStoryCategory('all', document.querySelector('[data-story-cat=all]'))" class="mt-2 px-5 py-2 rounded-full bg-gradient-to-r from-blue-600 to-sky-600 text-sm font-semibold text-white shadow cursor-pointer">
+        顯示全部故事
+      </button>
+    </div>
+
+    <!-- Storytelling Chapters Container -->
+    <div id="storiesContainer" class="space-y-12"></div>
+
+    <!-- ===================================================================== -->
+    <!-- TOOL 1: GERMAN / AUSTRIAN ROUNDING TIP CALCULATOR (AUFRUNDEN)         -->
+    <!-- ===================================================================== -->
+    <section id="tip-calculator-section" class="scroll-mt-36 space-y-5">
+      <div class="flex flex-wrap items-end justify-between gap-2">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-sky-300 font-bold">Interactive Tool 01</span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-0.5">
+            💶 德國／奧地利餐廳「湊整數小費」計算機（Aufrunden）
+          </h2>
+        </div>
+        <span class="text-xs text-sky-200">適用：慕尼黑、國王湖、薩爾斯堡、哈斯塔特（註：冰島無小費文化）</span>
+      </div>
+
+      <div class="liquid-glass rounded-3xl p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left Column: Input & Presets -->
+        <div class="lg:col-span-5 space-y-5">
+          <div>
+            <label for="billAmountInput" class="block text-sm font-semibold text-white mb-2">
+              請輸入餐廳帳單總金額（歐元 €）：
+            </label>
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl font-bold text-sky-300">€</span>
+              <input
+                id="billAmountInput"
+                type="number"
+                inputmode="decimal"
+                step="0.10"
+                min="0.50"
+                value="36.50"
+                oninput="calculateTips()"
+                class="w-full pl-10 pr-4 py-3.5 rounded-2xl bg-[#071124] border border-sky-300/35 text-2xl font-bold text-white focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/30 transition"
+                placeholder="例如 36.50"
+              />
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs font-medium text-sky-200 mb-2">快速帶入常見帳單金額：</p>
+            <div class="flex flex-wrap gap-2">
+              <button type="button" onclick="setPresetBill(18.50)" class="px-3 py-1.5 rounded-xl bg-[#0d1f3f] hover:bg-blue-700/60 border border-sky-300/25 text-xs font-semibold text-white transition cursor-pointer">
+                €18.50（咖啡蛋糕）
+              </button>
+              <button type="button" onclick="setPresetBill(36.50)" class="px-3 py-1.5 rounded-xl bg-[#0d1f3f] hover:bg-blue-700/60 border border-sky-300/25 text-xs font-semibold text-white transition cursor-pointer">
+                €36.50（雙人午餐）
+              </button>
+              <button type="button" onclick="setPresetBill(64.20)" class="px-3 py-1.5 rounded-xl bg-[#0d1f3f] hover:bg-blue-700/60 border border-sky-300/25 text-xs font-semibold text-white transition cursor-pointer">
+                €64.20（豬腳晚餐）
+              </button>
+              <button type="button" onclick="setPresetBill(112.00)" class="px-3 py-1.5 rounded-xl bg-[#0d1f3f] hover:bg-blue-700/60 border border-sky-300/25 text-xs font-semibold text-white transition cursor-pointer">
+                €112.00（多人聚餐）
+              </button>
+            </div>
+          </div>
+
+          <!-- Split Bill Cheat Sheet -->
+          <div class="p-4 rounded-2xl bg-[#071124] border border-sky-300/25 space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs font-bold text-sky-300">🧾 結帳必聽關鍵問句</span>
+              <button
+                type="button"
+                onclick="speakForeignPhrase(this, 'Zusammen oder getrennt?', 'de-DE')"
+                class="px-2.5 py-1 rounded-lg bg-blue-600/85 hover:bg-blue-500 border border-sky-300/40 text-xs font-semibold text-white transition cursor-pointer"
+              >
+                🔊 聽服務生問句
+              </button>
+            </div>
+            <p class="text-sm text-[#e2e8f0] leading-relaxed">
+              服務生會問 <strong class="text-white">"Zusammen oder getrennt?"</strong>（一起付還是分開付？）。
+              要分開算請回答 <strong class="text-sky-300">"Getrennt, bitte!"</strong>（格特倫特）；要一起付請說 <strong class="text-teal-300">"Zusammen, bitte!"</strong>（楚薩門）。
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Calculated Results -->
+        <div id="tipResultsGrid" class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- TOOL 2: 32-CARD TRILINGUAL TRAVEL FLASHCARD LIBRARY (DE / AT / IS)    -->
+    <!-- ===================================================================== -->
+    <section id="flashcards-section" class="scroll-mt-36 space-y-5">
+      <div class="flex flex-wrap items-end justify-between gap-2">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-teal-300 font-bold">Interactive Tool 02</span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-0.5">
+            🔊 冰島 × 南德 × 奧地利 三語發音字卡庫（共 32 張）
+          </h2>
+        </div>
+        <p class="text-xs text-sky-200">
+          點選卡片右上角「🇩🇪 德 / 🇦🇹 奧 / 🇮🇸 冰島」即可切換語言並聆聽發音
+        </p>
+      </div>
+
+      <!-- Iceland English Fluency & Takk fyrir Tip Banner -->
+      <div class="liquid-glass rounded-2xl p-4 sm:p-5 border-l-4 border-l-teal-400 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="space-y-1">
+          <div class="text-sm font-bold text-white flex items-center gap-2">
+            <span>🇮🇸 冰島旅行貼心小提醒：英文極流利，但一句「Takk fyrir」能瞬間收服冰島人的心！</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[#e2e8f0] leading-relaxed">
+            冰島是全球英語普及率最高的非英語系國家之一，從雷克雅維克到偏遠加油站都能流利英文溝通；但只要在結帳或道謝時說一句冰島語 <strong class="text-teal-300">"Takk fyrir"（塔克・菲里爾，謝謝您）</strong>，在地人一定會報以最燦爛的微笑！
+          </p>
+        </div>
+        <button
+          type="button"
+          onclick="speakForeignPhrase(this, 'Takk fyrir!', 'is-IS')"
+          class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-500 border border-teal-300/50 text-xs sm:text-sm font-semibold text-white transition cursor-pointer shrink-0 self-start sm:self-center"
+        >
+          🔊 試聽 Takk fyrir!
+        </button>
+      </div>
+
+      <!-- Flashcard Category Filter Tabs -->
+      <div id="flashcardCategoryTabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1"></div>
+
+      <!-- Empty Flashcard Search State -->
+      <div id="emptyFlashcardState" class="hidden liquid-glass rounded-3xl p-8 text-center space-y-2">
+        <p class="text-base font-bold text-white">找不到符合搜尋關鍵字的旅行字卡</p>
+        <p class="text-xs text-slate-300">試試搜尋「啤酒」、「馬鈴薯」、「汽油」、「極光」或點擊清除搜尋。</p>
+      </div>
+
+      <!-- Flashcards Grid -->
+      <div id="flashcardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
+  </main>
+
+  <!-- Floating Bottom Audio Controller Bar -->
+  <div id="floatingAudioBar" class="hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 px-4 py-3 rounded-3xl bg-[#061126]/95 backdrop-blur-2xl border border-sky-400/60 shadow-[0_14px_40px_rgba(0,0,0,0.85)] flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-[95vw]">
+    <div class="flex items-center gap-2 min-w-0">
+      <div class="flex items-center gap-1 shrink-0" aria-hidden="true">
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+      </div>
+      <span id="floatingAudioTitle" class="text-xs sm:text-sm font-semibold text-white truncate max-w-[180px] sm:max-w-[230px]">
+        正在播放語音...
+      </span>
+    </div>
+
+    <!-- Natural Mandarin Voice Selector & Cadence Controls -->
+    <div id="narrationControls" class="flex flex-wrap items-center justify-center gap-2 shrink-0">
+      <div class="flex items-center gap-1.5 bg-[#0c1d3d] border border-sky-300/30 rounded-full px-2.5 py-1">
+        <span class="text-xs text-sky-300" title="選擇自然中文說書聲線">🗣️</span>
+        <select
+          id="zhVoiceSelect"
+          onchange="onSelectZhVoice(this.value)"
+          aria-label="選擇中文說書人聲線"
+          class="bg-[#0c1d3d] text-xs text-white font-medium focus:outline-none max-w-[135px] sm:max-w-[175px] truncate cursor-pointer"
+        >
+          <option value="" class="bg-[#0c1d3d] text-white">自動偵測自然聲線...</option>
+        </select>
+        <button
+          type="button"
+          onclick="previewSelectedZhVoice()"
+          class="px-2 py-0.5 rounded-full bg-sky-500/30 hover:bg-sky-500/50 border border-sky-300/40 text-[11px] font-semibold text-sky-100 transition cursor-pointer"
+          title="試聽目前選擇的中文聲線"
+        >
+          試聽
+        </button>
+      </div>
+
+      <select
+        id="zhRateSelect"
+        onchange="onSelectZhRate(this.value)"
+        aria-label="選擇說書語速"
+        class="bg-[#0c1d3d] border border-sky-300/30 rounded-full px-2.5 py-1 text-xs text-sky-100 font-medium focus:outline-none cursor-pointer"
+      >
+        <option value="0.9" class="bg-[#0c1d3d] text-white">0.9x 溫柔說書</option>
+        <option value="0.98" selected class="bg-[#0c1d3d] text-white">1.0x 自然流暢</option>
+        <option value="1.15" class="bg-[#0c1d3d] text-white">1.15x 輕快節奏</option>
+      </select>
+
+      <button
+        id="pauseResumeBtn"
+        type="button"
+        onclick="togglePauseResumeAudio()"
+        class="px-3 py-1 rounded-full bg-blue-600 hover:bg-blue-500 border border-sky-300/50 text-xs font-semibold text-white transition cursor-pointer"
+      >
+        ⏸️ 暫停
+      </button>
+      <button
+        type="button"
+        onclick="stopAllSpeech()"
+        class="px-3 py-1 rounded-full bg-rose-600/90 hover:bg-rose-500 border border-rose-300/50 text-xs font-semibold text-white transition cursor-pointer"
+      >
+        ⏹️ 停止
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Message -->
+  <div id="toastBanner" class="hidden fixed top-24 right-4 z-50 px-4 py-2.5 rounded-2xl bg-[#09162e]/95 backdrop-blur-xl border border-sky-300/50 text-xs sm:text-sm font-medium text-white shadow-2xl max-w-sm">
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. 18 RICH CULTURAL STORIES (ICELAND, GERMANY, MUNICH, KÖNIGSSEE, SALZBURG, HALLSTATT, ROYALS)
+    // =========================================================================
+    const storySections = [
+      {
+        id: "iceland",
+        badge: "🇮🇸 冰島故事 ・ 冰與火的維京傳奇",
+        title: "冰島：世界最古老議會、精靈小人與極光下的冰川奇蹟",
+        subtitle: "走進這座只有三十八萬人口、卻擁有地球板塊裂谷與千年薩迦史詩的北大西洋島國",
+        stories: [
+          {
+            id: "is-1",
+            tag: "🏛️ 維京民主與大裂谷",
+            title: "全球最古老議會 Alþingi 與歐美兩大板塊裂谷",
+            body: "西元 930 年，當歐洲大陸還處於封建君主統治時，維京拓荒者就在冰島的辛格韋德利（Þingvellir）創立了人類史上第一個民主議會「Alþingi」，每年夏天各部族首領齊聚露天岩壁前朗誦法律、仲裁糾紛。更震撼的是，這裡正好位於歐亞板塊與北美板塊的交界大裂谷上，每年以約兩公分的速度默默拉開——你雙腳站立的地方，左腳踩著北美洲，右腳踏著歐洲！",
+            trivia: "附近的絲浮拉大裂縫（Silfra）是全球唯一能在兩大洲板塊之間潛水的地方，冰川融水過濾數十年，水下能見度高達一百公尺。"
+          },
+          {
+            id: "is-2",
+            tag: "📱 沒有姓氏的國度",
+            title: "父名制（-son / -dóttir）與國民「防近親交友 App」",
+            body: "冰島人幾乎沒有家族姓氏！他們沿用古老的維京「父名制」（或母名制）：如果爸爸叫 Jón，兒子名字後面就加上 son（Jónsson，約恩的兒子），女兒則加上 dóttir（Jónsdóttir，約恩的女兒）。因此冰島電話簿是按照「名字（First Name）」排列，連總統在名錄裡也只用名字查詢！因為全國只有三十八萬人、大家多半是遠親，冰島年輕人甚至開發了一款超紅的《Íslendingabók》族譜 App，在酒吧認識新對象時只要兩支手機「碰一下」，就能立刻確認彼此是不是三代以內的親戚！",
+            trivia: "冰島政府設有官方「命名委員會」，所有新生兒名字都必須符合冰島語文法與字母規則，不能隨便取外來奇特字眼。"
+          },
+          {
+            id: "is-3",
+            tag: "🐎 純種冰島馬與綿羊",
+            title: "羊比人多、天生會跳「五種步態」的純種冰島馬",
+            body: "在冰島環島自駕時，你看到的綿羊數量遠遠超過人類。而比綿羊更讓冰島人驕傲的，是血統純淨超過一千年的「冰島馬（Icelandic Horse）」。千萬別在冰島人面前叫牠們「小馬（Pony）」，當地人會非常介意！全世界一般的馬只有走、小跑、跑步三種步態，但冰島馬天生會第四種如絲般滑順的「溜蹄（Tölt）」，甚至第五種高速「飛奔步（Flying Pace）」，騎乘時穩到連手裡的啤酒都不會灑出來。為了保護千年純種基因，冰島法律嚴格規定：任何一匹冰島馬一旦出國比賽，這輩子都永遠禁止再踏回冰島國土！",
+            trivia: "夏天冰島綿羊常三隻一組在公路旁散步，看到路邊有羊一定要減速，因為它們受驚時隨時會突然衝過馬路。"
+          },
+          {
+            id: "is-4",
+            tag: "🧚 看不見的小鄰居",
+            title: "讓政府高速公路工程被迫改道的「精靈小人」",
+            body: "冰島火山熔岩地貌奇幻詭譎，超過一半的冰島人相信，岩石與苔原裡住著隱形的小精靈「Huldufólk（隱藏之民）」。這可不只是童話——冰島道路管理局在規劃公路時，如果工程頻頻發生機械故障，甚至會真的請「精靈溝通師」到現場協商，讓高速公路為了一塊「精靈居住的巨石」特地繞道而行！在雷克雅維克與小鎮花園裡，你處處能看見居民為精靈蓋的迷你小木屋。",
+            trivia: "在冰島野外千萬不要隨意堆疊石頭（Cairn），除了會破壞需要數十年才能長成的極地苔原，也可能打擾到石頭裡的小精靈喔！"
+          },
+          {
+            id: "is-5",
+            tag: "🌌 藝術名家與南岸奇景",
+            title: "精靈歌姬碧玉（Björk）、黑沙灘瘋狗浪與藍冰洞極光",
+            body: "人口不到四十萬的冰島卻擁有驚人文化能量：前衛音樂女王「碧玉（Björk）」以火山爆發般的嗓音向世界定義了冰島美學，而 1955 年諾貝爾文學獎得主「拉克司內斯（Halldór Laxness）」則寫下冰島人在酷寒大地上與自然搏鬥的史詩。旅途中造訪《權力遊戲》取景地「維克黑沙灘（Reynisfjara）」時，烏黑火山砂礫與六角玄武岩柱震撼無比，但務必背對大海拍照時提防致命的「瘋狗浪（Sneaker Waves）」。再往東走進歐洲最大「瓦特納冰川（Vatnajökull）」的天然藍冰洞，夜晚只要天空無雲、遠離光害，綠紫交織的歐若拉極光便會在頭頂翩翩起舞！",
+            trivia: "冰島平安夜有「聖誕書潮（Jólabókaflóð）」傳統，全家人互送新書，晚上邊喝熱可可邊讀書——平均每十個冰島人就有一人一生中會出版一本書！"
+          }
+        ]
+      },
+      {
+        id: "germany",
+        badge: "🇩🇪 德國總論 ・ 理性與浪漫的雙面鏡",
+        title: "德國：西裝口袋裡藏著暗黑童話書的哲學家工程師",
+        subtitle: "如果把國家擬人化，德國就是隨身帶著精密游標卡尺、週末卻去地下電音俱樂部狂歡的哲學家",
+        stories: [
+          {
+            id: "de-1",
+            tag: "🧩 三百公國碎布拼圖",
+            title: "神聖羅馬帝國的多中心文化，與鐵血宰相俾斯麥",
+            body: "在很長一段時間裡，「德國」並不存在，地圖上只有一片被稱為「德意志碎布拼圖」的神聖羅馬帝國——最誇張時擠了超過三百個大大小小的公國、主教區與自由市，早上出門散步，中午可能已經跨越三個國境、換了三種貨幣。這意外造就了德國沒有像巴黎或倫敦那樣「獨大」的首都，反而處處都是頂級交響樂團、歌劇院與古老大學（如海德堡、哥廷根）。直到 19 世紀「鐵血宰相」俾斯麥用三場精準戰爭，才以「鐵與血」將拼圖焊成統一帝國。",
+            trivia: "也因為這種聯邦傳統，德國各邦至今保有強烈的自主性與截然不同的方言、節慶與飲食文化。"
+          },
+          {
+            id: "de-2",
+            tag: "🌲 暗黑童話與時鐘哲學",
+            title: "原版《格林童話》的暗黑浪漫，與準時對時的康德",
+            body: "德國人的靈魂裡住著兩個極端：一邊是格林兄弟走訪黑森林收集的《格林童話》——原版一點也不溫馨，灰姑娘的姊姊為了穿進玻璃鞋削掉腳後跟、白雪公主的後母被罰穿上燒紅鐵鞋跳舞到死，這種「暗黑童話感」至今深深影響德國藝術；另一邊則是哲學家康德（Immanuel Kant），每天下午三點半準時出門散步，準時到當地主婦都能看著他對時（唯一一次遲到，是因為讀盧梭《愛彌兒》讀到忘我）。",
+            trivia: "德國人的三大日常密碼：Ordnung（凌晨兩點空路口仍等紅燈的秩序）、超過 3,000 種認證麵包（Brot），以及下班後老闆傳訊絕不回的 Feierabend（神聖下班時光）。"
+          },
+          {
+            id: "de-3",
+            tag: "⚙️ 屈辱標籤的終極逆襲",
+            title: "「Made in Germany」最初竟是英國羞辱山寨貨的警告，與柏林廢墟重生",
+            body: "今天「Made in Germany」是高品質代名詞，但在 19 世紀末德國剛工業化時，產品多靠模仿英國貨、價格低廉卻品質粗糙。英國國會在 1887 年通過《商標法》，強制所有德國進口商品必須印上「Made in Germany」，原本目的是警告英國消費者：「小心，這是劣質的德國山寨貨！」沒想到這個標籤激發了德國工程師的骨氣，死磕技術與工業標準，短短幾十年間竟把警告標語逆襲成品質神話。而 20 世紀經歷二戰傷痕後，德國選擇在柏林市中心建立 2,711 塊石碑的猶太人紀念碑徹底直視歷史，柏林圍牆倒塌後的廢棄電廠則重生成世界最前衛的 Berghain 電音殿堂。",
+            trivia: "從百年精密機械到小鎮麵包店的傳統烤箱，德國人把「把一件事做到極致」寫進了民族基因。"
+          }
+        ]
+      },
+      {
+        id: "munich",
+        badge: "🍺 慕尼黑 ・ 巴伐利亞快樂首府",
+        title: "慕尼黑：穿著傳統皮吊帶褲、手拿最新筆電的豪爽貴族",
+        subtitle: "從 12 世紀修道士建立的「僧侶之地」，演變成全球最懂得大口吃肉喝酒的快樂之都",
+        stories: [
+          {
+            id: "muc-1",
+            tag: "📜 1516 啤酒純釀法",
+            title: "啤酒比水還安全？五百年《啤酒純釀法》與皇室婚禮啤酒節",
+            body: "慕尼黑的德文原意是「僧侶之地（Bei den Mönchen）」。在慕尼黑，啤酒不是酒精飲料，而是「液態麵包」。1516 年巴伐利亞公爵頒布全球最古老的食品安全法《啤酒純釀法（Reinheitsgebot）》，硬性規定啤酒只能用大麥、啤酒花、水與酵母釀造，一滴化學添加物都不准放。在中世紀水源容易受污染的年代，喝煮沸發酵的啤酒反而比喝生水健康！而全球狂歡的慕尼黑啤酒節（Oktoberfest），則源自 1810 年 10 月巴伐利亞王儲路德維希一世的婚禮賽馬派對，因為太好玩決定年年續辦，一辦就是兩百多年。",
+            trivia: "點酒暗號：在啤酒館別只說 Beer！清爽淡拉格喊「Helles」、果香小麥白啤喊「Weißbier」、啤酒加雪碧喊「Radler」；500ml 叫 Ein Halbes，一公升巨無霸杯叫 Eine Maß！"
+          },
+          {
+            id: "muc-2",
+            tag: "🌭 皮褲筆電與白香腸魔咒",
+            title: "「皮褲與筆電」極致反差，與不能聽見正午鐘聲的白香腸",
+            body: "巴伐利亞人最自豪地用「Laptop und Lederhose（筆電與皮褲）」形容自己——上一秒在瑪麗恩廣場看 1908 年市政廳壁鐘人偶跳舞、去皇家啤酒屋看鎖在鐵櫃裡的常客私人酒杯，下一秒搭地鐵就能直擊造型如四汽缸引擎的 BMW 總部。而慕尼黑早餐靈魂「白香腸（Weißwurst）」有個著名魔咒：「不能聽見正午教堂的鐘聲！」因為早期無防腐劑的現做小牛肉香腸放到中午就會變質，老派餐廳至今只賣到中午 12 點，正宗吃法是剝掉韌腸衣沾甜芥末醬（Süßer Senf）配扭結麵包！",
+            trivia: "啤酒屋規矩：放著「Stammtisch」牌子的木桌是老主顧保留席千萬別坐；其他大桌有空位時，問一句「Darf ich mich dazusetzen?（我可以併桌嗎）」就能跟在地人乾杯！"
+          }
+        ]
+      },
+      {
+        id: "konigssee",
+        badge: "⛰️ 國王湖 ・ 阿爾卑斯翡翠峽灣",
+        title: "國王湖（Königssee）：冰河雕刻的仙境與百年魔法小號",
+        subtitle: "躲在貝希特斯加登國家公園深處，清澈達到飲用水標準的德國最美湖泊",
+        stories: [
+          {
+            id: "kon-1",
+            tag: "🎺 1909 環保遠見",
+            title: "北歐峽灣般的冰河深谷，與「回音壁」上的百年小號儀式",
+            body: "最後一次冰河時期，巨大冰川像鋒利的鑿子，在阿爾卑斯山岩石間刨出深達 190 公尺的 U 型深谷，使國王湖看起來宛如挪威峽灣。為了守護達到飲用水標準的湖水，國王湖早在 1909 年就下令禁止所有燃油船進入，只准電動船與手划船航行。因為電動船安靜無聲，成就了最浪漫的儀式：當船行經高聳的「回音壁（Echowand）」時，船長會關掉引擎吹奏小號（Flugelhorn），幾秒後山壁會把樂聲清晰彈回，彷彿山神在回應旅人。",
+            trivia: "乘船秘訣：聽完小號別忘了給船員一兩歐元小費；去程建議坐在船隻「右側（靠船頭方向）」，能獲得拍攝回音壁與紅洋蔥教堂的最佳視角！"
+          },
+          {
+            id: "kon-2",
+            tag: "⛪ 紅洋蔥教堂與上湖",
+            title: "聖巴爾多祿茂教堂、秘境上湖（Obersee）與山頂「鷹巢」的震撼對比",
+            body: "船隻停靠半島，白色牆面配兩顆可愛紅色圓頂的「聖巴爾多祿茂教堂（St. Bartholomä，俗稱紅洋蔥教堂）」自 12 世紀起便靜靜守候在 2,700 公尺高的瓦茨曼山東壁下。若體力允許，務必搭船到終點站 Salet 再步行 15 分鐘走進「上湖（Obersee）」，一座孤獨的小木屋倒映在如鏡湖面上，安靜到連樹葉落水都聽得見。然而抬頭望向不遠處山巔，卻坐落著二戰為希特勒建造的「鷹巢（Kehlsteinhaus）」，極致自然之美與歷史教訓在此強烈交會。",
+            trivia: "湖畔必吃：紅洋蔥教堂旁的百年老店 Fischer vom Königssee 專賣木柴現燻高山鱒魚（Räucherfisch），手撕魚肉配黑麵包與冰啤酒是絕配！"
+          }
+        ]
+      },
+      {
+        id: "salzburg",
+        badge: "🎻 薩爾斯堡 ・ 奧地利音樂之都",
+        title: "薩爾斯堡（Salzburg）：白金鹽都、莫札特與《真善美》反差",
+        subtitle: "距離國王湖僅二十分鐘車程，一座靠鹽礦致富、卻把音樂神童氣走的巴洛克藝術殿堂",
+        stories: [
+          {
+            id: "slz-1",
+            tag: "🎹 職場霸凌與天才出走",
+            title: "大主教的「白金鹽都」，與被總管一腳踹出門外的莫札特",
+            body: "薩爾斯堡（Salzburg）字面意思就是「鹽的城堡」。在古代鹽巴被稱為「白金」，統治這裡的天主教大主教們靠著開採周邊鹽礦賺進天文數字財富，把城市打造成華麗的巴洛克藝術殿堂。但這裡最驕傲的名片「莫札特」，生前其實超討厭家鄉！當時在大主教眼裡，這位天才音樂家跟廚師、馬夫沒兩樣，規定他只能跟僕人一起吃飯。25 歲那年莫札特受不了屈辱提出辭職，竟被大主教總管「一腳踹出門外」，氣得頭也不回搬去維也納，從此再也沒回來過。",
+            trivia: "伴手禮內行秘密：超市常見「紅金色包裝」莫札特巧克力球是工業量產版；1890 年甜點師傅 Paul Fürst 創始的手工正宗版是「銀色底、藍色頭像」包裝，只在薩爾斯堡市區四家直營店買得到！"
+          },
+          {
+            id: "slz-2",
+            tag: "🎶 《真善美》的奇妙溫差",
+            title: "全球遊客在花園大唱 Do-Re-Mi，與指揮帝王卡拉揚的故鄉",
+            body: "1965 年好萊塢經典電影《真善美（The Sound of Music）》在薩爾斯堡的米拉貝爾花園、修道院與主教宮廣場取景，每年吸引無數英語系遊客在飛馬噴泉旁興奮唱跳〈Do-Re-Mi〉。但如果你問當地奧地利人：「你們喜歡《真善美》嗎？」十個有九個會一臉困惑！因為在德語區這部電影當年票房慘淡，許多奧地利人甚至從未看過。此外，薩爾斯堡也是 20 世紀「指揮帝王」卡拉揚（Herbert von Karajan）的誕生地，每年夏天的薩爾斯堡音樂節更是全球古典樂迷的最高殿堂。",
+            trivia: "散步亮點：登上俯瞰老城的「薩爾斯堡要塞（Festung Hohensalzburg）」與糧食胡同（Getreidegasse）的精緻鍛鐵招牌街，能一眼看盡中歐最優雅的天際線。"
+          }
+        ]
+      },
+      {
+        id: "hallstatt",
+        badge: "🏔️ 哈斯塔特 ・ 世界文化遺產",
+        title: "哈斯塔特（Hallstatt）：7,000 年鹽礦文明與人骨教堂的生死美學",
+        subtitle: "藏在奧地利薩爾茨卡默古特湖區的絕美仙境，背後竟是歐洲早期鐵器時代的命名發源地",
+        stories: [
+          {
+            id: "hal-1",
+            tag: "⛏️ 人類最古老鹽礦",
+            title: "改寫歐洲考古史的「哈斯塔特文化」與鹽層木乃伊「鹽中人」",
+            body: "哈斯塔特不只是明信片小鎮，它更是人類史上最古老的鹽礦開採地，歷史可追溯至七千年前！因為出土文物極度豐富，歐洲考古學界直接將西元前 800 至 450 年的中歐早期鐵器時代定名為「哈斯塔特文化（Hallstatt Culture）」。當時靠著壟斷「白金」鹽巴貿易，山谷裡的先民富裕到擁有來自波羅的海的琥珀與地中海象牙。1734 年礦工甚至在鹽層中挖出一具保存完好、衣物仍清晰可辨的史前礦工木乃伊「鹽中人（Man in Salt）」！",
+            trivia: "旅遊體驗：搭乘鹽礦纜車登上世界遺產觀景台（Skywalk），除了能俯瞰整座湖心小鎮，還能換上礦工服溜進地底超長木頭滑梯！"
+          },
+          {
+            id: "hal-2",
+            tag: "💀 浪漫的阿爾卑斯生死觀",
+            title: "極度缺地而生的百年「人骨教堂」彩繪頭骨，與皇帝西西的湖畔足跡",
+            body: "哈斯塔特背靠陡峭達赫斯坦山脈、面朝深邃湖泊，平地稀缺到連墓園都沒有擴建空間。自 12 世紀起，當地形成獨特傳統：先人下葬 10 到 20 年後會將骸骨請出，由藝術家在頭骨上彩繪常春藤（代表永生）、橡樹葉（代表榮耀）或玫瑰（代表愛）並寫上姓名，整齊安放於「人骨教堂（Beinhaus）」中，超過六百個彩繪頭骨展現山民對親人最溫柔的紀念。19 世紀奧地利皇帝法蘭茲·約瑟夫、西西公主與浪漫主義文豪施蒂夫特（Adalbert Stifter）也常來此湖區避暑徒步，讓這座鹽礦小鎮成為皇室與詩人的心靈後花園。",
+            trivia: "奧地利咖啡館哲學：點一杯奶泡咖啡 Melange 必定附贈免費白開水，意思是「請慢慢坐，坐一整個下午發呆我們也絕不趕人」！國民口頭禪「Schau ma mal（我們再看看吧）」更道盡奧地利人的從容。"
+          }
+        ]
+      },
+      {
+        id: "royals",
+        badge: "👑 皇室傳奇 ・ 德奧百年三角戀",
+        title: "瘋狂國王路德維希二世、西西公主與德奧千年分家史",
+        subtitle: "氣質如出一轍的巴伐利亞與奧地利，如何演繹出歐洲最浪漫也最唏噓的皇室故事",
+        stories: [
+          {
+            id: "roy-1",
+            tag: "🏰 童話國王的孤獨",
+            title: "路德維希二世：傾家蕩產蓋新天鵝堡的「觀光業終極大恩人」",
+            body: "18 歲意外登基的巴伐利亞國王路德維希二世（Ludwig II），身高超過 190 公分、俊美憂鬱卻痛恨政治與社交。他是歌劇大師華格納的超級金主，更在政治挫敗後傾盡皇室私產，在阿爾卑斯山深處建造迪士尼睡美人城堡的原型「新天鵝堡」（王座廳裡甚至沒有王座，因為他覺得自己不配），並在林德霍夫宮發明全球最早的「電動升降餐桌」，只為了吃飯時不用看到僕人的臉！1886 年他被大臣宣布精神失常軟禁，三天後與精神科醫生神秘溺斃在施坦貝爾格湖水深不及膝蓋的淺水區，口袋懷錶永遠停在 6 點 54 分。諷刺的是，他去世僅七週城堡就開放售票，迅速還清所有債務，成為今日巴伐利亞最賺錢的印鈔機！",
+            trivia: "歷史反轉：當年大臣痛罵他是「敗家瘋子」，如今全世界旅人卻都為了他的浪漫夢境飛往南德。"
+          },
+          {
+            id: "roy-2",
+            tag: "🕊️ 老鷹與海鷗的靈魂共鳴",
+            title: "西西公主（Sissi）：19 吋螞蟻腰的極端自律，與德奧分家往事",
+            body: "奧地利傳奇皇后西西公主，其實是在慕尼黑湖畔自由長大的巴伐利亞野丫頭！15 歲陪姊姊去奧地利相親，卻被皇帝法蘭茲·約瑟夫一眼相中，16 歲嫁進規矩森嚴的維也納霍夫堡皇宮。受不了婆婆挑剔與孩子被抱走的窒息感，西西把全部掌控權放在身體上——每天清晨五點做體操、騎馬好幾小時並嚴格節食，維持 172 公分、19 吋腰圍與及踝長髮。冷冰冰的宮廷裡，只有遠在巴伐利亞的表姪路德維希二世懂她，兩人互稱「老鷹」與「海鷗」秘密通信。1898 年西西在日內瓦湖畔遭刺殺，因馬甲束得太緊，走上船後才倒下離世。而巴伐利亞與奧地利這對原本血脈相連的雙胞胎，也在 1866 年普奧戰爭後被俾斯麥拆散，留下幽默的「白香腸赤道」文化邊界！",
+            trivia: "趣味冷知識：巴伐利亞人去北德柏林常覺得像「出國」，開車跨國境去奧地利薩爾斯堡反而覺得像「回老家」！"
+          }
+        ]
+      }
+    ];
+
+    // =========================================================================
+    // 2. COMPLETE 32 TRILINGUAL TRAVEL FLASHCARDS (DE-DE / DE-AT / IS-IS)
+    // =========================================================================
+    const flashcardCategories = [
+      { id: "all", label: "✨ 全部 (32)" },
+      { id: "greetings", label: "👋 問候與禮貌 (6)" },
+      { id: "dining", label: "🍽️ 餐廳與酒吧 (7)" },
+      { id: "cafe", label: "☕ 咖啡館與甜點 (5)" },
+      { id: "driving", label: "🚗 自駕路況與加油 (5)" },
+      { id: "nature", label: "♨️ 溫泉、冰川與極光 (5)" },
+      { id: "shopping", label: "🛍️ 購物退稅與求助 (4)" }
+    ];
+
+    const trilingualCards = [
+      // --- Category 1: Greetings & Politeness (6) ---
+      {
+        cat: "greetings",
+        catLabel: "👋 問候與禮貌",
+        zh: "你好 / 日安（進店必說）",
+        de: { text: "Guten Tag / Hallo!", phonetic: "古騰・塔克 / 哈囉" },
+        at: { text: "Grüß Gott / Servus!", phonetic: "格呂斯・哥特 / 塞爾夫斯" },
+        is: { text: "Góðan daginn / Halló!", phonetic: "勾贊・達因 / 哈囉" },
+        tip: "在南德與奧地利走進小店或搭電梯，說聲 Grüß Gott（願主保佑你）超級親切；在冰島說 Góðan daginn 則是標準日安。"
+      },
+      {
+        cat: "greetings",
+        catLabel: "👋 問候與禮貌",
+        zh: "非常謝謝您",
+        de: { text: "Vielen Dank / Danke schön!", phonetic: "菲倫・當克 / 當克・順" },
+        at: { text: "Danke sehr / Vergelt's Gott!", phonetic: "當克・塞爾 / 費爾格爾茨・哥特" },
+        is: { text: "Takk fyrir!", phonetic: "塔克・菲里爾" },
+        tip: "在冰島買完咖啡或加油結帳後，說一句 Takk fyrir（謝謝），冰島人一定會露出驚喜又溫暖的笑容！"
+      },
+      {
+        cat: "greetings",
+        catLabel: "👋 問候與禮貌",
+        zh: "不好意思 / 請問一下...",
+        de: { text: "Entschuldigung, bitte...", phonetic: "恩特舒爾迪貢・比特" },
+        at: { text: "Entschuldigen Sie, bitte...", phonetic: "恩特舒爾迪根・西・比特" },
+        is: { text: "Afsakið...", phonetic: "阿夫薩基茲" },
+        tip: "在人群中借過或想開口問路時使用，語氣禮貌溫和。"
+      },
+      {
+        cat: "greetings",
+        catLabel: "👋 問候與禮貌",
+        zh: "請問您會說英文嗎？",
+        de: { text: "Sprechen Sie Englisch?", phonetic: "施普雷興・西・英格利希" },
+        at: { text: "Sprechen Sie Englisch?", phonetic: "施普雷興・西・英格利希" },
+        is: { text: "Talarðu ensku?", phonetic: "塔拉爾祖・恩斯庫" },
+        tip: "冰島幾乎全民英語流利，先用當地語言禮貌詢問，對方的協助意願會更高！"
+      },
+      {
+        cat: "greetings",
+        catLabel: "👋 問候與禮貌",
+        zh: "是 / 不是（好 / 不需要）",
+        de: { text: "Ja, bitte / Nein, danke.", phonetic: "雅・比特 / 奈恩・當克" },
+        at: { text: "Ja, gerne / Nein, danke.", phonetic: "雅・格爾內 / 奈恩・當克" },
+        is: { text: "Já, takk / Nei, takk.", phonetic: "耀・塔克 / 內・塔克" },
+        tip: "拒絕推銷或不需要加點時，記得在 Nein / Nei 後面加上「謝謝」，禮貌滿分。"
+      },
+      {
+        cat: "greetings",
+        catLabel: "👋 問候與禮貌",
+        zh: "再見 / 祝您有美好的一天",
+        de: { text: "Auf Wiedersehen / Tschüss!", phonetic: "奧夫・維德塞恩 / 丘斯" },
+        at: { text: "Auf Wiederschauen / Pfiat di!", phonetic: "奧夫・維德紹恩 / 菲亞特・迪" },
+        is: { text: "Bless bless!", phonetic: "布列斯・布列斯" },
+        tip: "冰島人道別超可愛，習慣連說兩次「Bless bless!」；奧地利與巴伐利亞道別常說「Pfiat di」。"
+      },
+
+      // --- Category 2: Dining & Bars (7) ---
+      {
+        cat: "dining",
+        catLabel: "🍽️ 餐廳與酒吧",
+        zh: "請問我可以併桌坐這裡嗎？",
+        de: { text: "Darf ich mich dazusetzen?", phonetic: "達夫・伊希・米希・達楚塞岑" },
+        at: { text: "Ist hier noch frei?", phonetic: "伊斯特・希爾・諾赫・弗賴" },
+        is: { text: "Má ég setjast hérna?", phonetic: "毛・耶格・塞特亞斯特・希爾納" },
+        tip: "慕尼黑皇家啤酒屋等傳統酒館大木桌常需併桌（避開寫著 Stammtisch 的老主顧保留桌即可）。"
+      },
+      {
+        cat: "dining",
+        catLabel: "🍽️ 餐廳與酒吧",
+        zh: "請給我菜單（英文菜單）",
+        de: { text: "Die Speisekarte, bitte.", phonetic: "迪・施派澤卡特・比特" },
+        at: { text: "Die Karte, bitte.", phonetic: "迪・卡特・比特" },
+        is: { text: "Matseðilinn, takk.", phonetic: "馬特塞齊林・塔克" },
+        tip: "歐洲餐廳入座後不會立刻遞菜單，主動舉手示意即可。"
+      },
+      {
+        cat: "dining",
+        catLabel: "🍽️ 餐廳與酒吧",
+        zh: "乾杯！（啤酒館必喊）",
+        de: { text: "Prost / Zum Wohl!", phonetic: "普羅斯特 / 楚姆・沃爾" },
+        at: { text: "Prost / Servus!", phonetic: "普羅斯特 / 塞爾夫斯" },
+        is: { text: "Skál!", phonetic: "斯考爾" },
+        tip: "在德國與奧地利乾杯時，務必「看著對方的眼睛」碰杯，否則依古老迷信會帶來七年厄運喔！"
+      },
+      {
+        cat: "dining",
+        catLabel: "🍽️ 餐廳與酒吧",
+        zh: "請給我一杯小麥白啤酒（500ml）",
+        de: { text: "Ein Weißbier, bitte.", phonetic: "艾因・懷斯比爾・比特" },
+        at: { text: "Ein Weizenbier, bitte.", phonetic: "艾因・懷岑比爾・比特" },
+        is: { text: "Einn bjór, takk.", phonetic: "艾因・比約爾・塔克" },
+        tip: "想喝清爽淡拉格改點「Helles」；想喝 1000ml 巨無霸酒杯則說「Eine Maß」！冰島精釀推薦 Gull 或 Einstök。"
+      },
+      {
+        cat: "dining",
+        catLabel: "🍽️ 餐廳與酒吧",
+        zh: "請給我無氣泡水（自來水）",
+        de: { text: "Stilles Wasser, bitte.", phonetic: "施蒂勒斯・瓦瑟・比特" },
+        at: { text: "Leitungswasser, bitte.", phonetic: "萊通斯瓦瑟・比特" },
+        is: { text: "Vatn, takk.", phonetic: "瓦特恩・塔克" },
+        tip: "在德國點水若沒說 Still，通常會送來氣泡水！而在冰島，全島水龍頭冷水都是純淨冰川融水，餐廳通常免費供應。"
+      },
+      {
+        cat: "dining",
+        catLabel: "🍽️ 餐廳與酒吧",
+        zh: "請問洗手間在哪裡？",
+        de: { text: "Wo ist die Toilette, bitte?", phonetic: "沃・伊斯特・迪・托伊萊特・比特" },
+        at: { text: "Wo ist das WC, bitte?", phonetic: "沃・伊斯特・達斯・維策・比特" },
+        is: { text: "Hvar er klósettið?", phonetic: "夸爾・艾爾・克洛塞蒂茲" },
+        tip: "德國車站與景點公廁多需投幣 €0.50–€1（Sanifair 票券可折抵商店消費）；冰島多數餐廳與加油站可免費借用。"
+      },
+      {
+        cat: "dining",
+        catLabel: "🍽️ 餐廳與酒吧",
+        zh: "請結帳！（我們要分開付）",
+        de: { text: "Zahlen, bitte! Getrennt.", phonetic: "察倫・比特！格特倫特" },
+        at: { text: "Zahlen, bitte! Getrennt.", phonetic: "察倫・比特！格特倫特" },
+        is: { text: "Reikninginn, takk!", phonetic: "雷克寧因・塔克" },
+        tip: "德奧服務生都會在桌邊直接幫每人分開算帳；遞出鈔票時直接喊湊整數金額（例如 40 Euro, bitte）就是給小費！"
+      },
+
+      // --- Category 3: Cafe & Food Vocabulary Differences (5) ---
+      {
+        cat: "cafe",
+        catLabel: "☕ 咖啡館與甜點",
+        zh: "馬鈴薯（德奧餐桌經典單字差）",
+        de: { text: "Kartoffel", phonetic: "卡托費爾" },
+        at: { text: "Erdapfel（地上的蘋果）", phonetic: "艾爾德阿普費爾" },
+        is: { text: "Kartöflur", phonetic: "卡托夫呂爾" },
+        tip: "奧地利人把馬鈴薯稱為「地上的蘋果（Erdapfel）」，看菜單時看到 Erdapfelsalat 就是馬鈴薯沙拉！"
+      },
+      {
+        cat: "cafe",
+        catLabel: "☕ 咖啡館與甜點",
+        zh: "番茄（奧地利浪漫用語）",
+        de: { text: "Tomate", phonetic: "托瑪特" },
+        at: { text: "Paradeiser（天堂的蘋果）", phonetic: "帕拉代澤" },
+        is: { text: "Tómatur", phonetic: "托馬圖爾" },
+        tip: "奧地利人把番茄叫做「天堂的蘋果（Paradeiser）」，這也是德奧語言差異最著名的代表字！"
+      },
+      {
+        cat: "cafe",
+        catLabel: "☕ 咖啡館與甜點",
+        zh: "鮮奶油（維也納／薩爾斯堡咖啡必點）",
+        de: { text: "Sahne / Schlagsahne", phonetic: "薩內 / 施拉格薩內" },
+        at: { text: "Schlagobers", phonetic: "施拉格歐伯斯" },
+        is: { text: "Rjómi", phonetic: "廖米" },
+        tip: "在奧地利咖啡館點沙河蛋糕（Sachertorte）或蘋果捲（Apfelstrudel），服務生常問要不要加 Schlagobers（鮮奶油）！"
+      },
+      {
+        cat: "cafe",
+        catLabel: "☕ 咖啡館與甜點",
+        zh: "請給我一杯奶泡咖啡（維也納咖啡）",
+        de: { text: "Ein Milchkaffee, bitte.", phonetic: "艾因・米爾希咖啡・比特" },
+        at: { text: "Eine Melange, bitte.", phonetic: "艾內・梅朗日・比特" },
+        is: { text: "Einn kaffi latte, takk.", phonetic: "艾因・咖啡・拿鐵・塔克" },
+        tip: "奧地利經典的 Melange 類似卡布奇諾，銀托盤上必定附一杯免費白開水，代表歡迎你坐一整個下午！"
+      },
+      {
+        cat: "cafe",
+        catLabel: "☕ 咖啡館與甜點",
+        zh: "請給我一份招牌肉桂捲 / 甜點",
+        de: { text: "Eine Zimtschnecke, bitte.", phonetic: "艾內・欽特施內克・比特" },
+        at: { text: "Ein Stück Apfelstrudel, bitte.", phonetic: "艾因・施圖克・阿普費爾施特魯德爾" },
+        is: { text: "Einn kanilsnúður, takk.", phonetic: "艾因・卡尼爾斯努祖爾・塔克" },
+        tip: "雷克雅維克著名的 Brauð & Co 肉桂捲（Kanilsnúður）是冰島早晨必排隊的人氣美食！"
+      },
+
+      // --- Category 4: Driving, Roads & Fuel (5) ---
+      {
+        cat: "driving",
+        catLabel: "🚗 自駕路況與加油",
+        zh: "請問這條路目前有開放通行嗎？",
+        de: { text: "Ist diese Straße geöffnet?", phonetic: "伊斯特・迪澤・施特拉瑟・格厄夫內特" },
+        at: { text: "Ist diese Straße befahrbar?", phonetic: "伊斯特・迪澤・施特拉瑟・貝法爾巴" },
+        is: { text: "Er þessi vegur opinn?", phonetic: "艾爾・塞西・維古爾・歐平" },
+        tip: "冰島天氣多變，出發前務必上 road.is 查詢路況，遇到標示 F 開頭的山路（F-roads）必須駕駛四輪傳動車才能進入！"
+      },
+      {
+        cat: "driving",
+        catLabel: "🚗 自駕路況與加油",
+        zh: "無鉛汽油 vs. 柴油（千萬別加錯！）",
+        de: { text: "Benzin（汽油）/ Diesel（柴油）", phonetic: "本欽 / 迪澤爾" },
+        at: { text: "Super（汽油）/ Diesel（柴油）", phonetic: "蘇珀 / 迪澤爾" },
+        is: { text: "Bensín（汽油）/ Dísel（柴油）", phonetic: "本辛 / 迪塞爾" },
+        tip: "冰島加油站汽油油槍通常是「綠色（Bensín 95）」，柴油是「黑色（Dísel）」，與部分地區顏色相反，加油前務必看清文字！"
+      },
+      {
+        cat: "driving",
+        catLabel: "🚗 自駕路況與加油",
+        zh: "請問這裡可以停車嗎？（停車計時器）",
+        de: { text: "Darf man hier parken?", phonetic: "達夫・曼・希爾・帕肯" },
+        at: { text: "Darf man hier parken?", phonetic: "達夫・曼・希爾・帕肯" },
+        is: { text: "Má leggja hérna?", phonetic: "毛・萊格亞・希爾納" },
+        tip: "在冰島瀑布、黑沙灘等熱門景點停車，多數需透過 Parka App 或現場機器輸入車牌繳費，離場前未繳會被租車公司加收高額手續費。"
+      },
+      {
+        cat: "driving",
+        catLabel: "🚗 自駕路況與加油",
+        zh: "小心強風！開車門請雙手握緊",
+        de: { text: "Vorsicht, starker Wind!", phonetic: "福爾西希特・施塔克・溫特" },
+        at: { text: "Achtung, starker Wind!", phonetic: "阿赫通・施塔克・溫特" },
+        is: { text: "Passaðu hurðina í vindinum!", phonetic: "帕薩祖・胡爾齊納・伊・溫迪努姆" },
+        tip: "冰島強風常能把車門直接吹翻折斷，且租車保險通常不理賠「風吹壞車門」！停好車務必逆風停放並雙手緊握車門。"
+      },
+      {
+        cat: "driving",
+        catLabel: "🚗 自駕路況與加油",
+        zh: "奧地利高速公路通行證（Vignette）",
+        de: { text: "Die Autobahnvignette, bitte.", phonetic: "迪・奧托班維涅特・比特" },
+        at: { text: "Die Vignette, bitte.", phonetic: "迪・維涅特・比特" },
+        is: { text: "Vegatollur（過路費/隧道費）", phonetic: "維加托呂爾" },
+        tip: "從慕尼黑／國王湖開車進入奧地利（薩爾斯堡、哈斯塔特）的高速公路前，務必在邊境加油站購買 Vignette 通行貼紙或線上登記！"
+      },
+
+      // --- Category 5: Hot Springs, Glaciers & Aurora (5) ---
+      {
+        cat: "nature",
+        catLabel: "♨️ 溫泉、冰川與極光",
+        zh: "地熱溫泉池 / 游泳池",
+        de: { text: "Das Thermalbad", phonetic: "達斯・泰爾馬爾巴德" },
+        at: { text: "Die Therme", phonetic: "迪・泰爾梅" },
+        is: { text: "Sundlaug / Jarðböð", phonetic: "孫德勞格 / 亞爾茲伯茲" },
+        tip: "冰島從藍湖（Blue Lagoon）、天空之湖（Sky Lagoon）到每個小鎮都有國民溫泉泳池（Sundlaug），是體驗在地文化的最佳去處！"
+      },
+      {
+        cat: "nature",
+        catLabel: "♨️ 溫泉、冰川與極光",
+        zh: "更衣室與淋浴區（下水前必先徹底淋浴）",
+        de: { text: "Die Umkleide / Dusche", phonetic: "迪・烏姆克萊德 / 杜舍" },
+        at: { text: "Die Garderobe / Dusche", phonetic: "迪・加德羅貝 / 杜舍" },
+        is: { text: "Búningsklefi / Sturta", phonetic: "布寧斯克萊菲 / 斯圖爾塔" },
+        tip: "冰島溫泉水不加氯消毒，嚴格規定「下水前必須在更衣室脫光泳衣、用肥皂徹底淋浴」後再穿上泳衣入池！"
+      },
+      {
+        cat: "nature",
+        catLabel: "♨️ 溫泉、冰川與極光",
+        zh: "請問今晚看得到極光嗎？",
+        de: { text: "Kann man heute Nordlichter sehen?", phonetic: "坎・曼・霍伊特・諾德利希特・塞恩" },
+        at: { text: "Sieht man heute Nordlichter?", phonetic: "西特・曼・霍伊特・諾德利希特" },
+        is: { text: "Sjást norðurljósin í kvöld?", phonetic: "肖斯特・諾爾祖爾廖辛・伊・克沃爾德" },
+        tip: "看極光最重要的不是 KP 指數高低，而是「頭頂上方的雲層要散開（vedur.is 綠色代表無雲）」！"
+      },
+      {
+        cat: "nature",
+        catLabel: "♨️ 溫泉、冰川與極光",
+        zh: "冰川健行 / 藍冰洞導覽",
+        de: { text: "Die Gletscherwanderung", phonetic: "迪・格萊徹萬德隆" },
+        at: { text: "Die Gletschertour", phonetic: "迪・格萊徹圖爾" },
+        is: { text: "Jöklaganga / Íshellir", phonetic: "約克拉岡加 / 伊斯赫利爾" },
+        tip: "冰川表面暗藏冰裂縫，切勿自行走上冰川，務必跟隨持有專業執照的當地冰川嚮導並穿戴冰爪。"
+      },
+      {
+        cat: "nature",
+        catLabel: "♨️ 溫泉、冰川與極光",
+        zh: "請問開往國王湖 / 哈斯塔特的末班船是幾點？",
+        de: { text: "Wann fährt das letzte Schiff?", phonetic: "萬・費爾特・達斯・萊茨特・希夫" },
+        at: { text: "Wann fährt das letzte Schiff?", phonetic: "萬・費爾特・達斯・萊茨特・希夫" },
+        is: { text: "Hvenær fer síðasta ferjan?", phonetic: "克維奈爾・費爾・西扎斯塔・費爾揚" },
+        tip: "國王湖上湖（Salet）與哈斯塔特火車站渡輪都有固定末班船時間，下船時記得先拍下碼頭時刻表！"
+      },
+
+      // --- Category 6: Shopping, Tax-Free & Help (4) ---
+      {
+        cat: "shopping",
+        catLabel: "🛍️ 購物退稅與求助",
+        zh: "我要刷卡感應支付（無現金社會）",
+        de: { text: "Mit Karte, bitte.", phonetic: "米特・卡特・比特" },
+        at: { text: "Mit Karte, bitte.", phonetic: "米特・卡特・比特" },
+        is: { text: "Með korti, takk.", phonetic: "梅茲・科爾蒂・塔克" },
+        tip: "冰島幾乎 100% 無現金（連公廁都能刷卡）；但德國與奧地利部分傳統小酒館或山屋仍只收現金，身上務必備些歐元鈔票！"
+      },
+      {
+        cat: "shopping",
+        catLabel: "🛍️ 購物退稅與求助",
+        zh: "請問可以辦理退稅單嗎？",
+        de: { text: "Kann ich ein Tax-Free-Formular bekommen?", phonetic: "坎・伊希・艾因・塔克斯弗里・福穆拉・貝科門" },
+        at: { text: "Bitte ein Tax-Free-Formular.", phonetic: "比特・艾因・塔克斯弗里・福穆拉" },
+        is: { text: "Get ég fengið Tax-Free kvittun?", phonetic: "格特・耶格・芬吉茲・塔克斯弗里・克維通" },
+        tip: "注意！冰島不屬於歐盟，因此在冰島買的退稅單要在「離開冰島的凱夫拉維克機場」辦理海關蓋章，不能帶去德國或奧地利退喔！"
+      },
+      {
+        cat: "shopping",
+        catLabel: "🛍️ 購物退稅與求助",
+        zh: "請問這個多少錢？",
+        de: { text: "Wie viel kostet das?", phonetic: "維・菲爾・科斯特特・達斯" },
+        at: { text: "Was kostet das?", phonetic: "瓦斯・科斯特特・達斯" },
+        is: { text: "Hvað kostar þetta?", phonetic: "夸茲・科斯塔爾・塞塔" },
+        tip: "冰島物價較高（大約是台灣的 2.5 到 3 倍），逛超市如小豬超市（Bónus）採買食材能省下不少旅費。"
+      },
+      {
+        cat: "shopping",
+        catLabel: "🛍️ 購物退稅與求助",
+        zh: "請幫幫我！我需要協助 / 醫療",
+        de: { text: "Hilfe, bitte! Ich brauche einen Arzt.", phonetic: "希爾費・比特！伊希・布勞赫・艾嫩・阿爾茨特" },
+        at: { text: "Bitte helfen Sie mir!", phonetic: "比特・赫爾芬・西・米爾" },
+        is: { text: "Hjálp! Ég þarf lækni.", phonetic: "希奧爾普！耶格・薩爾夫・萊克尼" },
+        tip: "全歐洲（包含冰島、德國、奧地利）緊急救援電話統一都是「112」，冰島也有官方旅遊安全警報網站 safetravel.is。"
+      }
+    ];
+
+    // =========================================================================
+    // 3. UPGRADED AUDIO ENGINE:
+    //    (A) NATURAL SENTENCE-BY-SENTENCE MANDARIN STORYTELLER (NO ROBOTIC DRONE)
+    //    (B) AUTHENTIC CLOUD + NATIVE ICELANDIC / GERMAN / AUSTRIAN TTS (ZERO CHINESE FALLBACK)
+    // =========================================================================
+    let activeStoryId = null;
+    let isNarrationMode = false;
+    let isNarrationPaused = false;
+    let narrationRunId = 0;
+    let narrationPauseTimer = null;
+
+    let cachedVoices = [];
+    let rankedZhVoices = [];
+    let selectedZhVoiceURI = "";
+    let selectedZhRate = 0.98;
+    let activeForeignAudio = null;
+
+    function scoreMandarinVoice(v) {
+      const name = (v.name || "").toLowerCase();
+      const lang = (v.lang || "").toLowerCase();
+      let score = 0;
+
+      if (lang === "zh-tw" || lang.includes("hant")) score += 60;
+      else if (lang === "zh-hk") score += 35;
+      else if (lang.startsWith("zh")) score += 20;
+      else return -1;
+
+      if (name.includes("natural") || name.includes("neural") || name.includes("online")) score += 100;
+      if (name.includes("hsiaochen") || name.includes("曉臻")) score += 45;
+      if (name.includes("yunjhe") || name.includes("雲哲")) score += 42;
+      if (name.includes("hsiaoyu") || name.includes("曉雨")) score += 38;
+      if (name.includes("google") && (name.includes("臺灣") || name.includes("台灣") || lang === "zh-tw")) score += 40;
+      if (name.includes("meijia") || name.includes("sinji") || name.includes("premium") || name.includes("enhanced")) score += 35;
+
+      if (name.includes("yating") || name.includes("hanhan") || name.includes("zhiwei") || name.includes("huihui")) score -= 25;
+      if (v.localService === false) score += 10;
+
+      return score;
+    }
+
+    function formatVoiceLabel(v) {
+      const clean = v.name
+        .replace(/Microsoft\s*/i, "")
+        .replace(/Online\s*\(Natural\)\s*-?\s*/i, "✨ ")
+        .replace(/\(Taiwan\)|\(Traditional\)|Chinese\s*/gi, "")
+        .trim();
+      const regionTag = v.lang.toLowerCase().includes("tw")
+        ? "台灣"
+        : v.lang.toLowerCase().includes("hk")
+        ? "粵/港"
+        : "國語";
+      return `${clean} (${regionTag})`;
+    }
+
+    function refreshVoices() {
+      if (!("speechSynthesis" in window)) return;
+      cachedVoices = window.speechSynthesis.getVoices() || [];
+
+      rankedZhVoices = cachedVoices
+        .map((v) => ({ voice: v, score: scoreMandarinVoice(v) }))
+        .filter((item) => item.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .map((item) => item.voice);
+
+      const selectEl = document.getElementById("zhVoiceSelect");
+      if (!selectEl) return;
+
+      if (rankedZhVoices.length === 0) {
+        selectEl.innerHTML = `<option value="" class="bg-[#0c1d3d] text-white">系統預設中文語音</option>`;
+        return;
+      }
+
+      if (!selectedZhVoiceURI || !rankedZhVoices.some((v) => v.voiceURI === selectedZhVoiceURI)) {
+        selectedZhVoiceURI = rankedZhVoices[0].voiceURI;
+      }
+
+      selectEl.innerHTML = rankedZhVoices
+        .map(
+          (v) =>
+            `<option value="${v.voiceURI}" class="bg-[#0c1d3d] text-white" ${v.voiceURI === selectedZhVoiceURI ? "selected" : ""}>${formatVoiceLabel(v)}</option>`
+        )
+        .join("");
+    }
+
+    refreshVoices();
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = refreshVoices;
+      setTimeout(refreshVoices, 300);
+      setTimeout(refreshVoices, 1200);
+    }
+
+    function getChosenZhVoice() {
+      if (rankedZhVoices.length === 0) refreshVoices();
+      return (
+        rankedZhVoices.find((v) => v.voiceURI === selectedZhVoiceURI) ||
+        rankedZhVoices[0] ||
+        null
+      );
+    }
+
+    function onSelectZhVoice(uri) {
+      selectedZhVoiceURI = uri;
+      previewSelectedZhVoice();
+    }
+
+    function onSelectZhRate(rateVal) {
+      selectedZhRate = parseFloat(rateVal) || 0.98;
+      showToast(`🎙️ 已調整說書語速為 ${rateVal}x`);
+    }
+
+    function previewSelectedZhVoice() {
+      if (!("speechSynthesis" in window)) return;
+      stopAllSpeech();
+      refreshVoices();
+
+      const sample = "你好！歡迎來到冰島與阿爾卑斯山，現在由我為你說一段精彩的旅行故事。";
+      const utter = new SpeechSynthesisUtterance(sample);
+      const voice = getChosenZhVoice();
+      if (voice) {
+        utter.voice = voice;
+        utter.lang = voice.lang;
+      } else {
+        utter.lang = "zh-TW";
+      }
+      utter.rate = selectedZhRate;
+      utter.pitch = 1.03;
+
+      updateFloatingBar(true, "試聽說書人聲線...", false, true);
+      utter.onend = () => {
+        if (!isNarrationMode) updateFloatingBar(false);
+      };
+      window.speechSynthesis.speak(utter);
+    }
+
+    function showToast(msg) {
+      const banner = document.getElementById("toastBanner");
+      banner.textContent = msg;
+      banner.classList.remove("hidden");
+      clearTimeout(window._toastTimeout);
+      window._toastTimeout = setTimeout(() => {
+        banner.classList.add("hidden");
+      }, 4200);
+    }
+
+    function updateFloatingBar(visible, title = "", showPause = false, showVoicePicker = true) {
+      const bar = document.getElementById("floatingAudioBar");
+      const titleEl = document.getElementById("floatingAudioTitle");
+      const pauseBtn = document.getElementById("pauseResumeBtn");
+      const controls = document.getElementById("narrationControls");
+
+      if (!visible) {
+        bar.classList.add("hidden");
+        return;
+      }
+
+      titleEl.textContent = title;
+      controls.classList.toggle("hidden", !showVoicePicker && !showPause);
+      pauseBtn.classList.toggle("hidden", !showPause);
+      pauseBtn.innerHTML = isNarrationPaused ? "▶️ 繼續" : "⏸️ 暫停";
+      bar.classList.remove("hidden");
+    }
+
+    function resetAllStoryNarrationUI() {
+      document.querySelectorAll("[data-narrate-btn]").forEach((btn) => {
+        btn.innerHTML = `<span>🎙️</span><span>中文說書朗讀</span>`;
+        btn.classList.remove("bg-sky-500", "border-sky-200", "text-white", "shadow-lg");
+        btn.classList.add("bg-[#142952]", "border-sky-300/35", "text-sky-200");
+      });
+      document.querySelectorAll("[data-story-card]").forEach((card) => {
+        card.classList.remove("card-speaking");
+      });
+      activeStoryId = null;
+      isNarrationMode = false;
+      isNarrationPaused = false;
+    }
+
+    function stopAllSpeech() {
+      narrationRunId++;
+      clearTimeout(narrationPauseTimer);
+
+      if (activeForeignAudio) {
+        try {
+          activeForeignAudio.pause();
+          activeForeignAudio.src = "";
+        } catch (e) {}
+        activeForeignAudio = null;
+      }
+
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+      resetAllStoryNarrationUI();
+      updateFloatingBar(false);
+    }
+
+    function togglePauseResumeAudio() {
+      if (!("speechSynthesis" in window) || !isNarrationMode) return;
+      const pauseBtn = document.getElementById("pauseResumeBtn");
+
+      if (!isNarrationPaused) {
+        isNarrationPaused = true;
+        clearTimeout(narrationPauseTimer);
+        window.speechSynthesis.pause();
+        pauseBtn.innerHTML = "▶️ 繼續";
+      } else {
+        isNarrationPaused = false;
+        window.speechSynthesis.resume();
+        pauseBtn.innerHTML = "⏸️ 暫停";
+      }
+    }
+
+    function splitTextIntoNaturalClauses(text) {
+      const cleaned = text
+        .replace(/（([^）]{1,18})）/g, "，$1，")
+        .replace(/\(([^)]{1,18})\)/g, "，$1，")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      const rawParts = cleaned.split(/(?<=[。！？；：\n])/);
+      const clauses = [];
+      for (const part of rawParts) {
+        const trimmed = part.trim();
+        if (!trimmed) continue;
+        if (trimmed.length > 65 && trimmed.includes("，")) {
+          const subParts = trimmed.split(/(?<=，)/);
+          let buf = "";
+          for (const sub of subParts) {
+            if ((buf + sub).length > 52 && buf) {
+              clauses.push(buf.trim());
+              buf = sub;
+            } else {
+              buf += sub;
+            }
+          }
+          if (buf.trim()) clauses.push(buf.trim());
+        } else {
+          clauses.push(trimmed);
+        }
+      }
+      return clauses;
+    }
+
+    function toggleStoryNarration(cardId, title, body, trivia) {
+      if (!("speechSynthesis" in window)) {
+        showToast("⚠️ 您的瀏覽器不支援語音合成朗讀功能");
+        return;
+      }
+
+      if (activeStoryId === cardId && isNarrationMode) {
+        stopAllSpeech();
+        return;
+      }
+
+      stopAllSpeech();
+      refreshVoices();
+
+      const currentRun = ++narrationRunId;
+      activeStoryId = cardId;
+      isNarrationMode = true;
+      isNarrationPaused = false;
+
+      const btn = document.querySelector(`[data-narrate-btn="${cardId}"]`);
+      const card = document.querySelector(`[data-story-card="${cardId}"]`);
+      if (btn) {
+        btn.innerHTML = `<span>⏹️</span><span>停止朗讀</span>`;
+        btn.classList.remove("bg-[#142952]", "border-sky-300/35", "text-sky-200");
+        btn.classList.add("bg-sky-500", "border-sky-200", "text-white", "shadow-lg");
+      }
+      if (card) {
+        card.classList.add("card-speaking");
+      }
+
+      updateFloatingBar(true, `說書中：${title}`, true, true);
+
+      const clauses = [
+        `${title}。`,
+        ...splitTextIntoNaturalClauses(body),
+        `最後分享一個旅途小彩蛋：`,
+        ...splitTextIntoNaturalClauses(trivia)
+      ];
+
+      let idx = 0;
+
+      function speakNextClause() {
+        if (currentRun !== narrationRunId) return;
+        if (isNarrationPaused) {
+          narrationPauseTimer = setTimeout(speakNextClause, 200);
+          return;
+        }
+        if (idx >= clauses.length) {
+          resetAllStoryNarrationUI();
+          updateFloatingBar(false);
+          return;
+        }
+
+        const chunk = clauses[idx++];
+        const utter = new SpeechSynthesisUtterance(chunk);
+        const chosenVoice = getChosenZhVoice();
+        if (chosenVoice) {
+          utter.voice = chosenVoice;
+          utter.lang = chosenVoice.lang;
+        } else {
+          utter.lang = "zh-TW";
+        }
+
+        const endsWithQuestion = chunk.endsWith("？");
+        const endsWithExclaim = chunk.endsWith("！");
+        utter.rate = selectedZhRate;
+        utter.pitch = endsWithQuestion ? 1.07 : endsWithExclaim ? 1.05 : 1.02;
+
+        utter.onend = () => {
+          if (currentRun !== narrationRunId) return;
+          const pauseMs = chunk.endsWith("。") || chunk.endsWith("！") || chunk.endsWith("？") ? 240 : 120;
+          narrationPauseTimer = setTimeout(speakNextClause, pauseMs);
+        };
+
+        utter.onerror = () => {
+          if (currentRun !== narrationRunId) return;
+          narrationPauseTimer = setTimeout(speakNextClause, 100);
+        };
+
+        window.speechSynthesis.speak(utter);
+      }
+
+      speakNextClause();
+    }
+
+    // Authentic Native Icelandic (is-IS), German (de-DE) & Austrian (de-AT) Audio
+    function playNativeLocalWebSpeechIfAvailable(cleanText, langCode) {
+      if (!("speechSynthesis" in window)) return false;
+      refreshVoices();
+
+      const targetBase = langCode.split("-")[0].toLowerCase();
+      const exactVoice = cachedVoices.find((v) => v.lang.toLowerCase() === langCode.toLowerCase());
+      const genuineLangVoice =
+        exactVoice ||
+        cachedVoices.find((v) => v.lang.toLowerCase().startsWith(targetBase + "-") || v.lang.toLowerCase() === targetBase);
+
+      if (!genuineLangVoice) {
+        return false;
+      }
+
+      const utter = new SpeechSynthesisUtterance(cleanText);
+      utter.voice = genuineLangVoice;
+      utter.lang = genuineLangVoice.lang;
+      utter.rate = 0.88;
+      utter.onend = () => updateFloatingBar(false);
+      utter.onerror = () => updateFloatingBar(false);
+      window.speechSynthesis.speak(utter);
+      return true;
+    }
+
+    function speakForeignPhrase(btnEl, rawText, langCode) {
+      stopAllSpeech();
+
+      const cleanText = rawText
+        .replace(/（[^）]*）|\([^)]*\)/g, "")
+        .replace(/\s*\/\s*/g, ", ")
+        .trim();
+
+      const langLabels = {
+        "de-DE": "🇩🇪 德國德文",
+        "de-AT": "🇦🇹 奧地利德文",
+        "is-IS": "🇮🇸 冰島語原音"
+      };
+
+      const ttsLangParam = langCode === "is-IS" ? "is" : langCode === "de-AT" ? "de-AT" : "de-DE";
+
+      if (btnEl) {
+        btnEl.classList.add("ring-2", "ring-sky-300");
+      }
+      updateFloatingBar(true, `${langLabels[langCode] || langCode}：${cleanText}`, false, false);
+
+      const cleanupBtn = () => {
+        if (btnEl) btnEl.classList.remove("ring-2", "ring-sky-300");
+      };
+
+      const cloudTtsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${encodeURIComponent(
+        ttsLangParam
+      )}&q=${encodeURIComponent(cleanText)}`;
+
+      const audio = new Audio();
+      audio.referrerPolicy = "no-referrer";
+      audio.src = cloudTtsUrl;
+      activeForeignAudio = audio;
+
+      audio.onended = () => {
+        activeForeignAudio = null;
+        updateFloatingBar(false);
+        cleanupBtn();
+      };
+
+      audio.onerror = () => {
+        activeForeignAudio = null;
+        const playedLocally = playNativeLocalWebSpeechIfAvailable(cleanText, langCode);
+        cleanupBtn();
+
+        if (!playedLocally) {
+          updateFloatingBar(false);
+          if (langCode === "is-IS") {
+            showToast(
+              "⚠️ 網路或裝置暫無法連線冰島語音庫（已阻擋中文腔誤讀），請點卡片上的「🔗 Forvo 母語真人」聽冰島人原音！"
+            );
+          } else {
+            showToast("⚠️ 無法載入德語語音，請確認網路連線或點擊「🔗 Forvo 母語真人」聆聽。");
+          }
+        }
+      };
+
+      audio.play().catch(() => {
+        audio.onerror();
+      });
+    }
+
+    function openForvoNativePronunciation(rawText, langCode) {
+      const firstPhrase = rawText
+        .replace(/（[^）]*）|\([^)]*\)/g, "")
+        .split("/")[0]
+        .replace(/[!?.。！？]/g, "")
+        .trim();
+      const forvoLang = langCode === "is-IS" ? "is" : "de";
+      const url = `https://forvo.com/search/${encodeURIComponent(firstPhrase)}/${forvoLang}/`;
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    // =========================================================================
+    // 4. RENDER STORY SECTIONS & UNIFIED SEARCH / CATEGORY FILTER
+    // =========================================================================
+    let selectedStoryCat = "all";
+    let globalQuery = "";
+
+    function renderStories() {
+      const container = document.getElementById("storiesContainer");
+      const emptyState = document.getElementById("emptyStoryState");
+      if (!container) return;
+      const q = globalQuery.trim().toLowerCase();
+
+      let html = "";
+      let visibleCount = 0;
+
+      storySections.forEach((sec) => {
+        if (selectedStoryCat !== "all" && sec.id !== selectedStoryCat) {
+          return;
+        }
+
+        const filteredStories = sec.stories.filter((item) => {
+          if (!q) return true;
+          const fullText = `${sec.title} ${sec.subtitle} ${item.tag} ${item.title} ${item.body} ${item.trivia}`.toLowerCase();
+          return fullText.includes(q);
+        });
+
+        if (filteredStories.length === 0) return;
+        visibleCount += filteredStories.length;
+
+        html += `
+          <section id="story-sec-${sec.id}" class="space-y-5 scroll-mt-36">
+            <div class="liquid-glass rounded-3xl p-5 sm:p-6 border-l-4 border-l-sky-400">
+              <span class="inline-block text-xs font-bold tracking-wider text-sky-200 bg-blue-500/20 px-3 py-1 rounded-full border border-sky-300/30 mb-2">
+                ${sec.badge}
+              </span>
+              <h2 class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-white">
+                ${sec.title}
+              </h2>
+              <p class="text-sm text-sky-200 mt-1">
+                ${sec.subtitle}
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              ${filteredStories
+                .map(
+                  (story) => `
+                <article
+                  data-story-card="${story.id}"
+                  class="liquid-glass liquid-glass-hover rounded-3xl p-6 flex flex-col justify-between gap-4"
+                >
+                  <div class="space-y-3.5">
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="text-xs font-semibold text-sky-200 bg-[#081327] border border-sky-300/30 px-2.5 py-1 rounded-full">
+                        ${story.tag}
+                      </span>
+                      <button
+                        type="button"
+                        data-narrate-btn="${story.id}"
+                        onclick='toggleStoryNarration(${JSON.stringify(story.id)}, ${JSON.stringify(story.title)}, ${JSON.stringify(story.body)}, ${JSON.stringify(story.trivia)})'
+                        class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#142952] hover:bg-blue-600 border border-sky-300/35 hover:border-sky-200 text-sky-200 hover:text-white transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
+                        title="點擊用中文語音說書朗讀整則故事"
+                      >
+                        <span>🎙️</span>
+                        <span>中文說書朗讀</span>
+                      </button>
+                    </div>
+
+                    <h3 class="font-serif text-lg sm:text-xl font-bold text-white leading-snug">
+                      ${story.title}
+                    </h3>
+
+                    <p class="text-base sm:text-[16.5px] text-[#e2e8f0] leading-[1.78]">
+                      ${story.body}
+                    </p>
+                  </div>
+
+                  <div class="pt-3.5 border-t border-sky-300/20">
+                    <p class="text-xs sm:text-sm text-sky-200 leading-relaxed">
+                      💡 <strong class="text-white">旅途彩蛋：</strong>${story.trivia}
+                    </p>
+                  </div>
+                </article>
+              `
+                )
+                .join("")}
+            </div>
+          </section>
+        `;
+      });
+
+      container.innerHTML = html;
+      if (emptyState) emptyState.classList.toggle("hidden", visibleCount > 0);
+    }
+
+    function setStoryCategory(catId, btnEl) {
+      selectedStoryCat = catId;
+      document.querySelectorAll("header nav .nav-pill").forEach((pill) => {
+        pill.classList.remove("active");
+      });
+      if (btnEl) {
+        btnEl.classList.add("active");
+      }
+      renderStories();
+
+      if (catId !== "all") {
+        const secEl = document.getElementById(`story-sec-${catId}`);
+        if (secEl) {
+          secEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    function handleGlobalSearch(val) {
+      globalQuery = val;
+      document.getElementById("clearSearchBtn").classList.toggle("hidden", !val.trim());
+      renderStories();
+      renderFlashcards();
+    }
+
+    function clearGlobalSearch() {
+      const input = document.getElementById("globalSearchInput");
+      input.value = "";
+      globalQuery = "";
+      document.getElementById("clearSearchBtn").classList.add("hidden");
+      renderStories();
+      renderFlashcards();
+    }
+
+    function jumpToSection(sectionId, shouldFocusInput) {
+      const target = document.getElementById(sectionId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (shouldFocusInput) {
+          setTimeout(() => {
+            const billInput = document.getElementById("billAmountInput");
+            if (billInput) {
+              billInput.focus();
+              billInput.select();
+            }
+          }, 420);
+        }
+      }
+    }
+
+    // =========================================================================
+    // 5. GERMAN / AUSTRIAN ROUNDING TIP CALCULATOR (AUFRUNDEN)
+    // =========================================================================
+    function setPresetBill(amount) {
+      const input = document.getElementById("billAmountInput");
+      input.value = amount.toFixed(2);
+      calculateTips();
+    }
+
+    function calculateTips() {
+      const input = document.getElementById("billAmountInput");
+      const grid = document.getElementById("tipResultsGrid");
+      if (!input || !grid) return;
+      const bill = parseFloat(input.value);
+
+      if (isNaN(bill) || bill <= 0) {
+        grid.innerHTML = `
+          <div class="sm:col-span-2 p-6 rounded-2xl bg-[#071124] border border-sky-300/25 text-center text-sm text-slate-200">
+            請輸入大於 0 的歐元帳單金額，系統將自動算出最道地的德國／奧地利湊整數小費方案。
+          </div>
+        `;
+        return;
+      }
+
+      let politeTotal = Math.ceil(bill * 1.07);
+      if (politeTotal - bill < 0.8) politeTotal += 1;
+
+      let generousRaw = bill * 1.12;
+      let generousTotal =
+        generousRaw >= 25 ? Math.ceil(generousRaw / 5) * 5 : Math.ceil(generousRaw);
+      if (generousTotal <= politeTotal) {
+        generousTotal = politeTotal + (bill >= 30 ? 5 : 2);
+      }
+
+      const suggestBillNote = (total) => {
+        if (total <= 10) return 10;
+        if (total <= 20) return 20;
+        if (total <= 50) return 50;
+        if (total <= 100) return 100;
+        return Math.ceil(total / 50) * 50;
+      };
+
+      const plans = [
+        {
+          label: "🌿 標準禮貌（約 7%）",
+          badgeStyle: "text-teal-200 bg-teal-500/20 border-teal-300/40",
+          total: politeTotal,
+          tip: (politeTotal - bill).toFixed(2),
+          pct: (((politeTotal - bill) / bill) * 100).toFixed(1),
+          note: suggestBillNote(politeTotal)
+        },
+        {
+          label: "✨ 大方讚賞（約 12%）",
+          badgeStyle: "text-sky-200 bg-blue-500/25 border-sky-300/45",
+          total: generousTotal,
+          tip: (generousTotal - bill).toFixed(2),
+          pct: (((generousTotal - bill) / bill) * 100).toFixed(1),
+          note: suggestBillNote(generousTotal)
+        }
+      ];
+
+      grid.innerHTML = plans
+        .map((plan) => {
+          const change = (plan.note - plan.total).toFixed(2);
+          const germanCallout = `${plan.total} Euro, bitte!`;
+          return `
+            <div class="p-5 rounded-2xl bg-[#071124] border border-sky-300/25 flex flex-col justify-between gap-4">
+              <div class="space-y-2.5">
+                <span class="inline-block text-xs font-bold px-2.5 py-1 rounded-full border ${plan.badgeStyle}">
+                  ${plan.label}
+                </span>
+                <div class="flex items-baseline justify-between pt-1">
+                  <span class="text-xs font-medium text-sky-200">湊整數總付：</span>
+                  <span class="font-serif text-3xl font-bold text-white">€${plan.total}</span>
+                </div>
+                <div class="text-xs text-[#e2e8f0] flex justify-between">
+                  <span>實際小費：+€${plan.tip}（${plan.pct}%）</span>
+                  <span>付 €${plan.note} 找回 €${change}</span>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-sky-300/15 space-y-2">
+                <div class="text-xs text-sky-200">遞出鈔票時直接對服務生喊：</div>
+                <div class="flex items-center justify-between gap-2 bg-[#040916] px-3 py-2.5 rounded-xl border border-sky-300/25">
+                  <span class="font-bold text-sm text-white">"${germanCallout}"</span>
+                  <button
+                    type="button"
+                    onclick='speakForeignPhrase(this, ${JSON.stringify(germanCallout)}, "de-DE")'
+                    class="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-500 border border-sky-300/50 text-xs font-semibold text-white transition cursor-pointer shrink-0"
+                  >
+                    🔊 德文發音
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        })
+        .join("");
+    }
+
+    // =========================================================================
+    // 6. 32-CARD TRILINGUAL TRAVEL FLASHCARDS (DE / AT / IS)
+    // =========================================================================
+    let activeFlashcardCat = "all";
+    const cardLangSelection = {};
+
+    function renderFlashcardTabs() {
+      const container = document.getElementById("flashcardCategoryTabs");
+      if (!container) return;
+      container.innerHTML = flashcardCategories
+        .map(
+          (cat) => `
+          <button
+            type="button"
+            onclick="setFlashcardCat('${cat.id}')"
+            class="nav-pill ${activeFlashcardCat === cat.id ? "active" : ""} whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer"
+          >
+            ${cat.label}
+          </button>
+        `
+        )
+        .join("");
+    }
+
+    function setFlashcardCat(catId) {
+      activeFlashcardCat = catId;
+      renderFlashcardTabs();
+      renderFlashcards();
+    }
+
+    function selectCardLang(cardIndex, langKey, autoSpeak = true) {
+      cardLangSelection[cardIndex] = langKey;
+      renderFlashcards();
+
+      if (autoSpeak) {
+        const card = trilingualCards[cardIndex];
+        const map = {
+          de: { text: card.de.text, code: "de-DE" },
+          at: { text: card.at.text, code: "de-AT" },
+          is: { text: card.is.text, code: "is-IS" }
+        };
+        const chosen = map[langKey];
+        const btn = document.getElementById(`card-speak-btn-${cardIndex}`);
+        speakForeignPhrase(btn, chosen.text, chosen.code);
+      }
+    }
+
+    function renderFlashcards() {
+      const grid = document.getElementById("flashcardsGrid");
+      const emptyState = document.getElementById("emptyFlashcardState");
+      if (!grid) return;
+      const q = globalQuery.trim().toLowerCase();
+
+      const filtered = trilingualCards
+        .map((card, idx) => ({ ...card, idx }))
+        .filter((card) => {
+          if (activeFlashcardCat !== "all" && card.cat !== activeFlashcardCat) {
+            return false;
+          }
+          if (!q) return true;
+          const haystack = `${card.catLabel} ${card.zh} ${card.de.text} ${card.de.phonetic} ${card.at.text} ${card.at.phonetic} ${card.is.text} ${card.is.phonetic} ${card.tip}`.toLowerCase();
+          return haystack.includes(q);
+        });
+
+      if (emptyState) emptyState.classList.toggle("hidden", filtered.length > 0);
+
+      grid.innerHTML = filtered
+        .map((card) => {
+          const idx = card.idx;
+          const lang = cardLangSelection[idx] || "de";
+          const activeData = card[lang];
+          const meta = {
+            de: {
+              flag: "🇩🇪",
+              label: "德國德文 (DE)",
+              code: "de-DE",
+              badge: "bg-blue-500/25 border-sky-300/50 text-sky-100"
+            },
+            at: {
+              flag: "🇦🇹",
+              label: "奧地利德文 (AT)",
+              code: "de-AT",
+              badge: "bg-indigo-500/30 border-indigo-300/50 text-indigo-100"
+            },
+            is: {
+              flag: "🇮🇸",
+              label: "冰島語 (IS)",
+              code: "is-IS",
+              badge: "bg-teal-500/25 border-teal-300/50 text-teal-100"
+            }
+          }[lang];
+
+          return `
+            <div class="liquid-glass liquid-glass-hover rounded-3xl p-5 flex flex-col justify-between gap-4">
+              <div class="space-y-3">
+                <!-- Category Pill & 3-Language Toggle Buttons -->
+                <div class="flex items-center justify-between gap-2">
+                  <span class="text-xs font-semibold text-sky-200 bg-[#071124] border border-sky-300/25 px-2.5 py-0.5 rounded-full">
+                    ${card.catLabel}
+                  </span>
+                  <div class="flex items-center gap-1" role="group" aria-label="切換發音語言">
+                    <button
+                      type="button"
+                      onclick="selectCardLang(${idx}, 'de', true)"
+                      class="px-2 py-1 rounded-lg text-xs font-semibold border transition cursor-pointer ${
+                        lang === "de"
+                          ? "bg-blue-600 border-sky-200 text-white shadow"
+                          : "bg-[#071124] border-sky-300/25 text-slate-300 hover:text-white"
+                      }"
+                      title="切換並發音：德國德文"
+                    >
+                      🇩🇪 德
+                    </button>
+                    <button
+                      type="button"
+                      onclick="selectCardLang(${idx}, 'at', true)"
+                      class="px-2 py-1 rounded-lg text-xs font-semibold border transition cursor-pointer ${
+                        lang === "at"
+                          ? "bg-indigo-600 border-indigo-200 text-white shadow"
+                          : "bg-[#071124] border-sky-300/25 text-slate-300 hover:text-white"
+                      }"
+                      title="切換並發音：奧地利德文"
+                    >
+                      🇦🇹 奧
+                    </button>
+                    <button
+                      type="button"
+                      onclick="selectCardLang(${idx}, 'is', true)"
+                      class="px-2 py-1 rounded-lg text-xs font-semibold border transition cursor-pointer ${
+                        lang === "is"
+                          ? "bg-teal-600 border-teal-200 text-white shadow"
+                          : "bg-[#071124] border-sky-300/25 text-slate-300 hover:text-white"
+                      }"
+                      title="切換並發音：冰島語"
+                    >
+                      🇮🇸 冰島
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Traditional Chinese Meaning -->
+                <div class="text-base font-bold text-white">
+                  ${card.zh}
+                </div>
+
+                <!-- High-Contrast Deep Midnight Navy Native Text & Pronunciation Box -->
+                <div class="p-4 rounded-2xl bg-[#071124] border border-sky-300/25 space-y-2">
+                  <div class="flex items-center justify-between gap-2">
+                    <span class="text-xs font-semibold px-2.5 py-0.5 rounded-md border ${meta.badge}">
+                      ${meta.flag} ${meta.label}
+                    </span>
+                    <button
+                      id="card-speak-btn-${idx}"
+                      type="button"
+                      onclick='speakForeignPhrase(this, ${JSON.stringify(activeData.text)}, "${meta.code}")'
+                      class="px-3 py-1 rounded-lg bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-500 hover:to-sky-500 border border-sky-300/50 text-xs font-semibold text-white transition cursor-pointer flex items-center gap-1 shadow"
+                    >
+                      <span>🔊</span>
+                      <span>發音</span>
+                    </button>
+                  </div>
+
+                  <div class="font-serif text-lg sm:text-xl font-bold text-white pt-1 leading-snug">
+                    ${activeData.text}
+                  </div>
+
+                  <div class="text-xs sm:text-sm text-sky-200">
+                    諧音提示：${activeData.phonetic}
+                  </div>
+
+                  <div class="pt-1 flex justify-end">
+                    <button
+                      type="button"
+                      onclick='openForvoNativePronunciation(${JSON.stringify(activeData.text)}, "${meta.code}")'
+                      class="text-[11px] font-medium text-sky-300 hover:text-white underline decoration-sky-400/50 underline-offset-2 transition cursor-pointer"
+                      title="開啟 Forvo 聆聽當地母語者真人錄音"
+                    >
+                      🔗 Forvo 母語真人發音比對 ↗
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cultural Usage Tip -->
+              <div class="pt-2.5 border-t border-sky-300/15 text-xs sm:text-sm text-[#e2e8f0] leading-relaxed">
+                💡 ${card.tip}
+              </div>
+            </div>
+          `;
+        })
+        .join("");
+    }
+
+    // Immediate initialization + DOMContentLoaded fallback to guarantee rendering
+    function initApp() {
+      refreshVoices();
+      renderStories();
+      calculateTips();
+      renderFlashcardTabs();
+      renderFlashcards();
+    }
+
+    initApp();
+    window.addEventListener("DOMContentLoaded", initApp);
+  </script>
+</body>
+</html>
