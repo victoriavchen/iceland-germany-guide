@@ -2,12 +2,27 @@
 <html lang="zh-Hant" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>冰島 × 南德 × 奧地利：文化故事與隨身語音指南</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>冰島×德奧 文化故事與隨身語音指南</title>
+
+  <!-- iOS & Android PWA Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="冰島×德奧" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#040916" />
+  <link id="apple-touch-icon-link" rel="apple-touch-icon" sizes="180x180" href="" />
+  <link id="favicon-link" rel="icon" type="image/png" href="" />
+  <link id="manifest-link" rel="manifest" href="" />
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+
   <script>
     tailwind.config = {
       theme: {
@@ -20,15 +35,16 @@
       },
     };
   </script>
+
   <style>
     :root {
       --navy-950: #040916;
       --navy-900: #09152b;
       --navy-850: #0b1d3a;
-      --glass-card-bg: rgba(13, 24, 46, 0.85);
-      --glass-card-hover: rgba(17, 32, 60, 0.94);
-      --glass-border: rgba(148, 197, 255, 0.24);
-      --glass-border-hover: rgba(125, 211, 252, 0.52);
+      --glass-card-bg: rgba(13, 24, 46, 0.86);
+      --glass-card-hover: rgba(17, 32, 60, 0.95);
+      --glass-border: rgba(148, 197, 255, 0.25);
+      --glass-border-hover: rgba(125, 211, 252, 0.55);
     }
 
     * {
@@ -49,7 +65,7 @@
       color-scheme: dark;
     }
 
-    /* Deep Sapphire, Aurora Teal & Royal Indigo Ambient Glow Orbs */
+    /* Deep Midnight Navy Aurora Ambient Orbs */
     .ambient-canvas {
       position: fixed;
       inset: 0;
@@ -131,11 +147,12 @@
 
     /* Sticky Top Navigation Bar */
     .liquid-nav {
-      background: rgba(5, 11, 24, 0.9);
+      background: rgba(5, 11, 24, 0.92);
       backdrop-filter: blur(26px) saturate(170%);
       -webkit-backdrop-filter: blur(26px) saturate(170%);
       border-bottom: 1px solid rgba(148, 197, 255, 0.22);
-      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.65);
+      padding-top: env(safe-area-inset-top);
     }
 
     /* Navigation & Category Filter Pills */
@@ -163,10 +180,27 @@
     /* Active Speaking Card State */
     .card-speaking {
       border-color: #38bdf8 !important;
-      background: rgba(16, 33, 66, 0.95) !important;
+      background: rgba(16, 33, 66, 0.96) !important;
       box-shadow:
         0 0 34px rgba(56, 189, 248, 0.38),
         inset 0 1px 0 rgba(186, 230, 253, 0.45) !important;
+    }
+
+    /* Return to Top Section Button */
+    .back-to-top-btn {
+      background: rgba(15, 31, 61, 0.9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(148, 197, 255, 0.35);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      transition: all 0.22s ease;
+    }
+
+    .back-to-top-btn:hover {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(13, 148, 136, 0.85));
+      border-color: rgba(186, 230, 253, 0.75);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(14, 165, 233, 0.35);
     }
 
     /* Audio Equalizer Animation */
@@ -190,7 +224,7 @@
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="font-sans antialiased selection:bg-sky-500/40 selection:text-white">
+<body id="top-anchor" class="font-sans antialiased selection:bg-sky-500/40 selection:text-white">
 
   <!-- Deep Midnight Navy Ambient Glow Background -->
   <div class="ambient-canvas" aria-hidden="true">
@@ -202,18 +236,20 @@
   <!-- Sticky Top Navigation Bar -->
   <header class="liquid-nav sticky top-0 z-40 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <!-- Row 1: Title + Jump Tool CTAs + Search -->
+      <!-- Row 1: App Icon Preview + Title + Tool CTAs + Search -->
       <div class="flex flex-wrap items-center justify-between gap-3">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-blue-600/85 to-sky-500/85 border border-sky-300/40 flex items-center justify-center text-lg shadow-lg">
-            🧭
-          </div>
+          <img
+            id="headerAppIconPreview"
+            alt="冰島×德奧 專屬主畫面圖示"
+            class="w-10 h-10 rounded-2xl border border-sky-300/45 shadow-lg object-cover shrink-0 bg-[#071326]"
+          />
           <div>
             <h1 class="font-serif text-base sm:text-lg font-bold tracking-wide text-white leading-tight">
               冰島 × 南德 × 奧地利：文化故事與隨身語音指南
             </h1>
             <p class="text-xs text-sky-200 hidden sm:block">
-              深度人文說書 ・ 中文語音朗讀 ・ 32 張三語發音字卡 ・ 餐廳小費計算機
+              18 則中文說書故事 ・ 32 張三語發音字卡 ・ 餐廳小費計算機 ・ PWA 離線支援
             </p>
           </div>
         </div>
@@ -275,13 +311,13 @@
           🍺 慕尼黑
         </button>
         <button type="button" data-story-cat="konigssee" onclick="setStoryCategory('konigssee', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
-          ⛰️ 國王湖
+          🏞️ 國王湖
         </button>
         <button type="button" data-story-cat="salzburg" onclick="setStoryCategory('salzburg', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
-          🎻 薩爾斯堡
+          🎼 薩爾斯堡
         </button>
         <button type="button" data-story-cat="hallstatt" onclick="setStoryCategory('hallstatt', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
-          🏔️ 哈斯塔特
+          🏔️ 哈斯塔特 Hallstatt
         </button>
         <button type="button" data-story-cat="royals" onclick="setStoryCategory('royals', this)" class="nav-pill whitespace-nowrap px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer">
           👑 皇室傳奇
@@ -293,20 +329,39 @@
   <!-- Main Content -->
   <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-7 pb-32 space-y-12">
 
-    <!-- Hero Intro Card -->
+    <!-- Hero Intro Card + PWA Home Screen Guide -->
     <section class="liquid-glass rounded-3xl p-6 sm:p-8 lg:p-9">
-      <div class="max-w-4xl space-y-3">
-        <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 border border-sky-300/35 text-sky-200 text-xs font-semibold">
-          <span>🎙️ 全站 18 則故事支援繁體中文語音說書</span>
-          <span>•</span>
-          <span>🗣️ 32 張德語 / 奧地利語 / 冰島語真人發音字卡</span>
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <div class="max-w-3xl space-y-3">
+          <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/20 border border-sky-300/35 text-sky-200 text-xs font-semibold">
+            <span>📱 支援 iPhone / Android 加入主畫面 App 圖示</span>
+            <span>•</span>
+            <span>🎙️ 18 則中文說書朗讀</span>
+            <span>•</span>
+            <span>🗣️ 32 張三語發音字卡</span>
+          </div>
+          <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug">
+            從北大西洋的極光與維京議會，走進阿爾卑斯山的童話城堡與千年鹽都
+          </h2>
+          <p class="text-base sm:text-[17px] text-[#e2e8f0] leading-[1.78]">
+            每張故事卡片右上角皆配有 <strong class="text-sky-300">「🎙️ 中文說書朗讀」</strong> 按鈕，點一下就能像聽旅遊 Podcast 一樣把歷史與人文故事唸出來；每個段落最底部也都有 <strong class="text-teal-300">「⬆️ 返回首頁頂部」</strong> 按鈕，方便隨時切換章節與隨身工具。
+          </p>
         </div>
-        <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug">
-          從北大西洋的極光與維京議會，走進阿爾卑斯山的童話城堡與千年鹽都
-        </h2>
-        <p class="text-base sm:text-[17px] text-[#e2e8f0] leading-[1.78]">
-          全站採用一致的深午夜藍高對比液態玻璃設計，文字清晰不刺眼。每張故事卡片右上角皆配有 <strong class="text-sky-300">「🎙️ 中文說書朗讀」</strong> 按鈕，點一下就像隨身導遊為你講故事；下方還有專屬的<strong>德國／奧地利湊整數小費計算機</strong>與<strong>32 張三語旅行發音字卡庫</strong>。
-        </p>
+
+        <!-- Home Screen App Icon Preview Card -->
+        <div class="shrink-0 p-4 rounded-2xl bg-[#071124]/90 border border-sky-300/30 flex items-center gap-4 max-w-sm">
+          <img
+            id="heroAppIconPreview"
+            alt="冰島×德奧 主畫面 App 圖示預覽"
+            class="w-16 h-16 rounded-2xl border border-sky-300/50 shadow-xl shrink-0"
+          />
+          <div class="space-y-1">
+            <div class="text-xs font-bold text-sky-300">📲 加入手機主畫面步驟</div>
+            <p class="text-xs text-[#e2e8f0] leading-relaxed">
+              iPhone 用 <strong class="text-white">Safari</strong> 點「分享 □↑ → 加入主畫面」；Android 用 <strong class="text-white">Chrome</strong> 點「⋮ → 加到主畫面」，即顯示此專屬極光雪山圖示。
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -320,7 +375,7 @@
       </button>
     </div>
 
-    <!-- Storytelling Chapters Container -->
+    <!-- Storytelling Chapters Container (Each section includes a Back-to-Top button at bottom) -->
     <div id="storiesContainer" class="space-y-12"></div>
 
     <!-- ===================================================================== -->
@@ -400,6 +455,18 @@
         <!-- Right Column: Calculated Results -->
         <div id="tipResultsGrid" class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
       </div>
+
+      <!-- Back to Top Button at bottom of Tip Calculator Section -->
+      <div class="flex justify-end pt-1">
+        <button
+          type="button"
+          onclick="scrollToTop()"
+          class="back-to-top-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-sky-100 hover:text-white flex items-center gap-1.5 cursor-pointer"
+        >
+          <span>⬆️</span>
+          <span>返回首頁頂部</span>
+        </button>
+      </div>
     </section>
 
     <!-- ===================================================================== -->
@@ -448,7 +515,39 @@
 
       <!-- Flashcards Grid -->
       <div id="flashcardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+
+      <!-- Back to Top Button at bottom of Flashcards Section -->
+      <div class="flex justify-end pt-2">
+        <button
+          type="button"
+          onclick="scrollToTop()"
+          class="back-to-top-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-sky-100 hover:text-white flex items-center gap-1.5 cursor-pointer"
+        >
+          <span>⬆️</span>
+          <span>返回首頁頂部</span>
+        </button>
+      </div>
     </section>
+
+    <!-- Footer Section with Back-to-Top Button -->
+    <footer class="liquid-glass rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-center sm:text-left space-y-1">
+        <p class="font-serif text-base font-bold text-white">
+          祝你在冰島極光下、阿爾卑斯雪峰旁與多瑙河畔擁有難忘旅程 🧭
+        </p>
+        <p class="text-xs text-sky-200">
+          單頁式 PWA 應用程式（index.html）— 支援離線瀏覽與主畫面一鍵開啟
+        </p>
+      </div>
+      <button
+        type="button"
+        onclick="scrollToTop()"
+        class="back-to-top-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white flex items-center gap-2 cursor-pointer shrink-0"
+      >
+        <span>⬆️</span>
+        <span>返回首頁頂部</span>
+      </button>
+    </footer>
 
   </main>
 
@@ -521,6 +620,245 @@
   </div>
 
   <script>
+    // =========================================================================
+    // 0. GENERATE CUSTOM AURORA & ALPINE GLACIER LIQUID GLASS APP ICON (PWA)
+    // =========================================================================
+    function generateCustomAppIconDataURL(size) {
+      const canvas = document.createElement("canvas");
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext("2d");
+
+      // 1. Deep Midnight Navy Sky Base
+      const skyGrad = ctx.createLinearGradient(0, 0, 0, size);
+      skyGrad.addColorStop(0, "#030814");
+      skyGrad.addColorStop(0.55, "#081730");
+      skyGrad.addColorStop(1, "#0d2547");
+      ctx.fillStyle = skyGrad;
+      ctx.fillRect(0, 0, size, size);
+
+      // 2. Subtle Starfield
+      ctx.fillStyle = "rgba(224, 242, 254, 0.75)";
+      const stars = [
+        [0.18, 0.14, 1.5], [0.32, 0.10, 1.2], [0.47, 0.16, 1.8],
+        [0.64, 0.12, 1.4], [0.81, 0.18, 1.6], [0.24, 0.27, 1.1],
+        [0.73, 0.25, 1.3], [0.55, 0.22, 1.2], [0.14, 0.34, 1.3],
+        [0.86, 0.31, 1.4]
+      ];
+      stars.forEach(([sx, sy, sr]) => {
+        ctx.beginPath();
+        ctx.arc(sx * size, sy * size, (sr * size) / 180, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // 3. Northern Lights (Aurora Borealis Ribbons)
+      ctx.save();
+      ctx.globalCompositeOperation = "screen";
+      const aurora1 = ctx.createLinearGradient(size * 0.12, size * 0.12, size * 0.88, size * 0.48);
+      aurora1.addColorStop(0, "rgba(16, 185, 129, 0)");
+      aurora1.addColorStop(0.28, "rgba(52, 211, 153, 0.85)");
+      aurora1.addColorStop(0.55, "rgba(45, 212, 191, 0.92)");
+      aurora1.addColorStop(0.82, "rgba(56, 189, 248, 0.65)");
+      aurora1.addColorStop(1, "rgba(99, 102, 241, 0)");
+
+      ctx.fillStyle = aurora1;
+      ctx.beginPath();
+      ctx.moveTo(size * 0.08, size * 0.38);
+      ctx.bezierCurveTo(size * 0.28, size * 0.12, size * 0.45, size * 0.42, size * 0.65, size * 0.16);
+      ctx.bezierCurveTo(size * 0.78, size * 0.04, size * 0.88, size * 0.24, size * 0.94, size * 0.32);
+      ctx.lineTo(size * 0.94, size * 0.50);
+      ctx.bezierCurveTo(size * 0.76, size * 0.36, size * 0.62, size * 0.54, size * 0.44, size * 0.36);
+      ctx.bezierCurveTo(size * 0.28, size * 0.24, size * 0.18, size * 0.48, size * 0.08, size * 0.48);
+      ctx.closePath();
+      ctx.fill();
+
+      // Secondary Emerald Aurora Curtains
+      const aurora2 = ctx.createLinearGradient(0, size * 0.08, 0, size * 0.46);
+      aurora2.addColorStop(0, "rgba(110, 231, 183, 0.05)");
+      aurora2.addColorStop(0.5, "rgba(52, 211, 153, 0.55)");
+      aurora2.addColorStop(1, "rgba(14, 165, 233, 0)");
+      ctx.fillStyle = aurora2;
+      ctx.beginPath();
+      ctx.moveTo(size * 0.20, size * 0.08);
+      ctx.quadraticCurveTo(size * 0.52, size * 0.34, size * 0.84, size * 0.10);
+      ctx.lineTo(size * 0.84, size * 0.44);
+      ctx.quadraticCurveTo(size * 0.50, size * 0.52, size * 0.20, size * 0.42);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+
+      // 4. Alpine Snow Peaks & Glacial Valley
+      // Back Left Peak
+      ctx.fillStyle = "#12294d";
+      ctx.beginPath();
+      ctx.moveTo(0, size * 0.82);
+      ctx.lineTo(size * 0.24, size * 0.58);
+      ctx.lineTo(size * 0.48, size * 0.82);
+      ctx.closePath();
+      ctx.fill();
+
+      // Back Right Peak
+      ctx.fillStyle = "#0f2342";
+      ctx.beginPath();
+      ctx.moveTo(size * 0.46, size * 0.82);
+      ctx.lineTo(size * 0.76, size * 0.56);
+      ctx.lineTo(size, size * 0.82);
+      ctx.closePath();
+      ctx.fill();
+
+      // Main Center-Left Snow Mountain
+      const mtnGrad1 = ctx.createLinearGradient(0, size * 0.56, 0, size);
+      mtnGrad1.addColorStop(0, "#e0f2fe");
+      mtnGrad1.addColorStop(0.45, "#60a5fa");
+      mtnGrad1.addColorStop(1, "#0b1d3a");
+      ctx.fillStyle = mtnGrad1;
+      ctx.beginPath();
+      ctx.moveTo(-size * 0.04, size);
+      ctx.lineTo(size * 0.24, size * 0.58);
+      ctx.lineTo(size * 0.54, size);
+      ctx.closePath();
+      ctx.fill();
+
+      // Main Center-Right Snow Mountain
+      const mtnGrad2 = ctx.createLinearGradient(0, size * 0.55, 0, size);
+      mtnGrad2.addColorStop(0, "#f0f9ff");
+      mtnGrad2.addColorStop(0.42, "#38bdf8");
+      mtnGrad2.addColorStop(1, "#08152b");
+      ctx.fillStyle = mtnGrad2;
+      ctx.beginPath();
+      ctx.moveTo(size * 0.42, size);
+      ctx.lineTo(size * 0.76, size * 0.56);
+      ctx.lineTo(size * 1.05, size);
+      ctx.closePath();
+      ctx.fill();
+
+      // Mountain Shadow Facets for Crisp Alpine Depth
+      ctx.fillStyle = "rgba(7, 19, 38, 0.68)";
+      ctx.beginPath();
+      ctx.moveTo(size * 0.24, size * 0.58);
+      ctx.lineTo(size * 0.30, size * 0.75);
+      ctx.lineTo(size * 0.54, size);
+      ctx.lineTo(size * 0.36, size);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(size * 0.76, size * 0.56);
+      ctx.lineTo(size * 0.82, size * 0.74);
+      ctx.lineTo(size * 1.05, size);
+      ctx.lineTo(size * 0.88, size);
+      ctx.closePath();
+      ctx.fill();
+
+      // Winding Glacial River in Valley
+      const glacierGrad = ctx.createLinearGradient(size * 0.5, size * 0.74, size * 0.5, size);
+      glacierGrad.addColorStop(0, "rgba(186, 230, 253, 0.85)");
+      glacierGrad.addColorStop(1, "rgba(56, 189, 248, 0.35)");
+      ctx.fillStyle = glacierGrad;
+      ctx.beginPath();
+      ctx.moveTo(size * 0.48, size * 0.76);
+      ctx.quadraticCurveTo(size * 0.40, size * 0.86, size * 0.56, size);
+      ctx.lineTo(size * 0.38, size);
+      ctx.quadraticCurveTo(size * 0.32, size * 0.88, size * 0.46, size * 0.76);
+      ctx.closePath();
+      ctx.fill();
+
+      // 5. Crisp White Title Text: "冰島×德奧"
+      ctx.save();
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.font = `700 ${Math.round(size * 0.165)}px "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif`;
+      ctx.shadowColor = "rgba(2, 6, 23, 0.9)";
+      ctx.shadowBlur = size * 0.045;
+      ctx.shadowOffsetY = size * 0.012;
+      ctx.fillStyle = "#f8fafc";
+      ctx.fillText("冰島×德奧", size * 0.5, size * 0.48);
+      ctx.restore();
+
+      // 6. Liquid Glass Top Specular Sheen & Rim Highlight
+      const glassSheen = ctx.createLinearGradient(0, 0, 0, size * 0.36);
+      glassSheen.addColorStop(0, "rgba(255, 255, 255, 0.24)");
+      glassSheen.addColorStop(1, "rgba(255, 255, 255, 0)");
+      ctx.fillStyle = glassSheen;
+      ctx.fillRect(0, 0, size, size * 0.36);
+
+      ctx.strokeStyle = "rgba(186, 230, 253, 0.38)";
+      ctx.lineWidth = Math.max(2, size * 0.014);
+      ctx.strokeRect(ctx.lineWidth / 2, ctx.lineWidth / 2, size - ctx.lineWidth, size - ctx.lineWidth);
+
+      return canvas.toDataURL("image/png");
+    }
+
+    function setupPWAAssets() {
+      try {
+        const icon180 = generateCustomAppIconDataURL(180);
+        const icon512 = generateCustomAppIconDataURL(512);
+
+        const appleIconLink = document.getElementById("apple-touch-icon-link");
+        const faviconLink = document.getElementById("favicon-link");
+        const headerPreview = document.getElementById("headerAppIconPreview");
+        const heroPreview = document.getElementById("heroAppIconPreview");
+
+        if (appleIconLink) appleIconLink.href = icon180;
+        if (faviconLink) faviconLink.href = icon180;
+        if (headerPreview) headerPreview.src = icon180;
+        if (heroPreview) heroPreview.src = icon512;
+
+        // Dynamic Web App Manifest for Android / Desktop PWA Install
+        const manifestObj = {
+          name: "冰島×德奧：文化故事與隨身語音指南",
+          short_name: "冰島×德奧",
+          description: "冰島、南德慕尼黑國王湖與奧地利薩爾斯堡哈斯塔特文化說書與三語發音隨身指南",
+          start_url: "./",
+          display: "standalone",
+          background_color: "#040916",
+          theme_color: "#040916",
+          orientation: "portrait-primary",
+          icons: [
+            { src: icon180, sizes: "180x180", type: "image/png" },
+            { src: icon512, sizes: "512x512", type: "image/png", purpose: "any maskable" }
+          ]
+        };
+        const manifestBlob = new Blob([JSON.stringify(manifestObj)], { type: "application/manifest+json" });
+        const manifestLink = document.getElementById("manifest-link");
+        if (manifestLink) {
+          manifestLink.href = URL.createObjectURL(manifestBlob);
+        }
+
+        // Inline Service Worker for Offline Caching (works on HTTPS / GitHub Pages)
+        if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+          const swCode = `
+            const CACHE_NAME = 'iceland-de-at-guide-v1';
+            self.addEventListener('install', (e) => {
+              self.skipWaiting();
+              e.waitUntil(
+                caches.open(CACHE_NAME).then((cache) => cache.addAll(['./']).catch(() => {}))
+              );
+            });
+            self.addEventListener('activate', (e) => {
+              e.waitUntil(self.clients.claim());
+            });
+            self.addEventListener('fetch', (e) => {
+              if (e.request.method !== 'GET') return;
+              e.respondWith(
+                fetch(e.request)
+                  .then((res) => {
+                    const copy = res.clone();
+                    caches.open(CACHE_NAME).then((cache) => cache.put(e.request, copy)).catch(() => {});
+                    return res;
+                  })
+                  .catch(() => caches.match(e.request))
+              );
+            });
+          `;
+          const swBlob = new Blob([swCode], { type: "application/javascript" });
+          navigator.serviceWorker.register(URL.createObjectURL(swBlob)).catch(() => {});
+        }
+      } catch (err) {
+        console.warn("PWA setup skipped:", err);
+      }
+    }
+
     // =========================================================================
     // 1. 18 RICH CULTURAL STORIES (ICELAND, GERMANY, MUNICH, KÖNIGSSEE, SALZBURG, HALLSTATT, ROYALS)
     // =========================================================================
@@ -621,7 +959,7 @@
       },
       {
         id: "konigssee",
-        badge: "⛰️ 國王湖 ・ 阿爾卑斯翡翠峽灣",
+        badge: "🏞️ 國王湖 ・ 阿爾卑斯翡翠峽灣",
         title: "國王湖（Königssee）：冰河雕刻的仙境與百年魔法小號",
         subtitle: "躲在貝希特斯加登國家公園深處，清澈達到飲用水標準的德國最美湖泊",
         stories: [
@@ -643,7 +981,7 @@
       },
       {
         id: "salzburg",
-        badge: "🎻 薩爾斯堡 ・ 奧地利音樂之都",
+        badge: "🎼 薩爾斯堡 ・ 奧地利音樂之都",
         title: "薩爾斯堡（Salzburg）：白金鹽都、莫札特與《真善美》反差",
         subtitle: "距離國王湖僅二十分鐘車程，一座靠鹽礦致富、卻把音樂神童氣走的巴洛克藝術殿堂",
         stories: [
@@ -1026,8 +1364,8 @@
 
     // =========================================================================
     // 3. UPGRADED AUDIO ENGINE:
-    //    (A) NATURAL SENTENCE-BY-SENTENCE MANDARIN STORYTELLER (NO ROBOTIC DRONE)
-    //    (B) AUTHENTIC CLOUD + NATIVE ICELANDIC / GERMAN / AUSTRIAN TTS (ZERO CHINESE FALLBACK)
+    //    (A) NATURAL SENTENCE-BY-SENTENCE MANDARIN STORYTELLER
+    //    (B) AUTHENTIC CLOUD + NATIVE ICELANDIC / GERMAN / AUSTRIAN TTS
     // =========================================================================
     let activeStoryId = null;
     let isNarrationMode = false;
@@ -1455,6 +1793,10 @@
     let selectedStoryCat = "all";
     let globalQuery = "";
 
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     function renderStories() {
       const container = document.getElementById("storiesContainer");
       const emptyState = document.getElementById("emptyStoryState");
@@ -1536,6 +1878,18 @@
                 )
                 .join("")}
             </div>
+
+            <!-- Back to Top Button at the Bottom of Each Story Chapter -->
+            <div class="flex justify-end pt-1">
+              <button
+                type="button"
+                onclick="scrollToTop()"
+                class="back-to-top-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-sky-100 hover:text-white flex items-center gap-1.5 cursor-pointer"
+              >
+                <span>⬆️</span>
+                <span>返回首頁頂部</span>
+              </button>
+            </div>
           </section>
         `;
       });
@@ -1560,7 +1914,7 @@
           secEl.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        scrollToTop();
       }
     }
 
@@ -1889,8 +2243,9 @@
         .join("");
     }
 
-    // Immediate initialization + DOMContentLoaded fallback to guarantee rendering
+    // Immediate initialization + DOMContentLoaded fallback
     function initApp() {
+      setupPWAAssets();
       refreshVoices();
       renderStories();
       calculateTips();
